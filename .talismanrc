@@ -1,12 +1,8 @@
 fileignoreconfig:
 - filename: ios/.xcode.env
   checksum: b38a48e7c3739b46abd9f520c7dc6ce4f9411cff1d98cb06aa0e941e2d8899d5
-- filename: ios/GreetingHexJavascriptReact.xcodeproj/project.pbxproj
-  checksum: 5190a23ce0fe9ba1831f32b500ba47dd70ec436da870af22a88b9f067340a56d
 - filename: ios/GreetingHexJavascriptReact.xcodeproj/xcshareddata/xcschemes/GreetingHexJavascriptReact.xcscheme
   checksum: 446e3bb4d02dff71a0a858acc212bd530a71b12844368443373d2a0bf5b2bfc9
-- filename: package-lock.json
-  checksum: 4fa4956fc343848571ecbfa5d7ee1ba38e841fd1a9043bce7790c2fbe695fd67
 - filename: README.md
   checksum: a45176092e7e6a435fc864633408b84ff6b73ce7791ec46e03f9094373809b62
 - filename: android/app/build.gradle
@@ -19,4 +15,10 @@ fileignoreconfig:
   checksum: f7605410fd4923eca99598ad35d5f9840465f15fff90186549f795565710b2de
 - filename: ios/GreetingHexJavascriptReact/LaunchScreen.storyboard
   checksum: 7657ae5ec88059913b5f1afca7efc60a72ca0d261ce0ec625bd5c0d9e6e67c41
+- filename: ios/Podfile.lock
+  checksum: 03d006f20b95d64ee3dc05c00bb87bcf3649da0635ff4f7deec13be896594ae0
+- filename: package-lock.json
+  checksum: e1f173c9c3247bec0fde481e0d72b462040339d63585b51cdb676883298c2d51
+- filename: ios/GreetingHexJavascriptReact.xcodeproj/project.pbxproj
+  checksum: 7b55e6c14e0918a5f0d8c4e001dcdeba974fc863d5a8861d1aea679742e05fa6
 version: ""
