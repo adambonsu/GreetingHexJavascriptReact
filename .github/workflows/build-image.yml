@@ -21,7 +21,7 @@ jobs:
             - name: Build Android APK
               run: |
                 cd android
-                ./gradlew assembeRelease
+                ./gradlew assembleRelease
             - name: Build iOS IPA
               run: |
                 cd ios

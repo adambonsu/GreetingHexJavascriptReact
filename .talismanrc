@@ -21,4 +21,10 @@ fileignoreconfig:
   checksum: e1f173c9c3247bec0fde481e0d72b462040339d63585b51cdb676883298c2d51
 - filename: ios/GreetingHexJavascriptReact.xcodeproj/project.pbxproj
   checksum: 7b55e6c14e0918a5f0d8c4e001dcdeba974fc863d5a8861d1aea679742e05fa6
+- filename: .github/workflows/ci-cd.yml
+  checksum: 41d5f6747e4d3d97b0c1ce69858a8f05f735775d6bfed257861eab902733b462
+- filename: .github/workflows/ci.yml
+  checksum: cedf5b9d120c9887d35f0fa129419c2caaf07c6acc4b9b4e0267511add96d1bf
+- filename: .github/workflows/cd.yml
+  checksum: 3464ce79fd6517c28beed0c4ad45e91281d1c6feb03b9b425bc87f5f365a8960
 version: ""
