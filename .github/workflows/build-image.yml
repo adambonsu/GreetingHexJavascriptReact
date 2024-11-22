@@ -1,0 +1,39 @@
+name: BuildImage
+run-name: "Build Image run by @${{ github.actor }}, event: ${{ github.event_name }}"
+on:
+    workflow_call:
+    workflow_dispatch:
+concurrency:
+    group: build-image ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+    cancel-in-progress: true
+jobs:
+    build-image:
+        runs-on: macos-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 16
+            - name: Install dependencies
+              run: npm ci
+            - name: Build Android APK
+              run: |
+                cd android
+                ./gradlew assembeRelease
+            - name: Build iOS IPA
+              run: |
+                cd ios
+                xcodebuild -workspace GreetingHexJavascriptReact.xcworkspace -scheme GreetingHexJavascriptReact -configuration Release -archivePath GreetingHexJavascriptReact.xarchive archive
+                xcodebuild -exportArchive -archivePath GreetingHexJavascriptReact.xarchive -exportOptionsPlist exportOptions.plist -exportPath .
+            - name: Upload Android APK
+              uses: actions/upload-artifact@v3
+              with:
+                  name: app-release.apk
+                  path: android/app/build/outputs/apk/release/app-release.apk
+            - name: Upload iOS IPA
+              uses: actions/upload-artifact@v3
+              with:
+                  name: GreetingHexJavascriptReact.ipa
+                  path: ios/GreetingHexJavascriptReact.ipa
