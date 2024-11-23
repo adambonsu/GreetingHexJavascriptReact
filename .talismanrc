@@ -29,4 +29,6 @@ fileignoreconfig:
   checksum: bf8706613e637cb2dd974ce46b53b288f4f6e93a1090f0d4db56fc944d80cce1
 - filename: .github/workflows/build-image.yml
   checksum: 4ec3ac87492bdd8ab0652add19d0f83148f6989d360260ae7a155da57caaca30
+- filename: ios/exportOptions.plist
+  checksum: eec768a92863fe973648635052fc68678f5fae8b47c02b1f0bddaeaad540d245
 version: ""
