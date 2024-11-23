@@ -23,6 +23,14 @@ jobs:
               with:
                 java-version: '17'
                 distribution: 'temurin'
+            - name: Set up Python
+              uses: actions/setup-python@v4
+              with:
+                  python-version: '3.x'
+            - name: Clean Android build
+              env:
+                ANDROID_DIR: ${{ github.workspace }}/android
+              run: python scripts/clean_android_build.py
             - name: Build Android APK
               run: |
                 cd android
