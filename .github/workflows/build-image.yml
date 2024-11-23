@@ -71,6 +71,15 @@ jobs:
                   node-version: 20
             - name: Install dependencies
               run: npm ci
+            - name: Install CocoaPods
+              run: |
+                cd ios
+                pod install
+            - name: Set up code signing
+              uses: apple-actions/import-codesign-certs@v1
+              with:
+                p12-file-base64: ${{ secrets.IOS_P12_BASE64 }}
+                p12-password: ${{ secrets.IOS_P12_PASSWORD }}
             - name: Build iOS IPA
               run: |
                 cd ios
@@ -79,5 +88,5 @@ jobs:
             - name: Upload iOS IPA
               uses: actions/upload-artifact@v3
               with:
-                  name: GreetingHexJavascriptReact.ipa
-                  path: ios/GreetingHexJavascriptReact.ipa
+                name: GreetingHexJavascriptReact.ipa
+                path: ios/GreetingHexJavascriptReact.ipa

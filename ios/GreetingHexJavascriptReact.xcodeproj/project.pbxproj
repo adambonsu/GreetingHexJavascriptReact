@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* GreetingHexJavascriptReactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* GreetingHexJavascriptReactTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-GreetingHexJavascriptReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-GreetingHexJavascriptReact.a */; };
+		09D8AE06E74A132AEFEBB003 /* libPods-GreetingHexJavascriptReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84ACE20F02E7C8EBB67D95BE /* libPods-GreetingHexJavascriptReact.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a */; };
+		70085D1D86B399A37EA73327 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEDE40CAFBDFE52A8D0E54B5 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		BF1F9ABC63C1AB024B8E9282 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
@@ -31,6 +31,7 @@
 		00E356EE1AD99517003FC87E /* GreetingHexJavascriptReactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreetingHexJavascriptReactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* GreetingHexJavascriptReactTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GreetingHexJavascriptReactTests.m; sourceTree = "<group>"; };
+		0ECB4B54B6DDDE8AACC475D2 /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig"; path = "Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* GreetingHexJavascriptReact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreetingHexJavascriptReact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = GreetingHexJavascriptReact/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = GreetingHexJavascriptReact/AppDelegate.mm; sourceTree = "<group>"; };
@@ -38,13 +39,12 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = GreetingHexJavascriptReact/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = GreetingHexJavascriptReact/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = GreetingHexJavascriptReact/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-GreetingHexJavascriptReact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreetingHexJavascriptReact.debug.xcconfig"; path = "Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-GreetingHexJavascriptReact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreetingHexJavascriptReact.release.xcconfig"; path = "Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig"; path = "Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-GreetingHexJavascriptReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GreetingHexJavascriptReact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = GreetingHexJavascriptReact/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig"; path = "Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig"; sourceTree = "<group>"; };
+		84ACE20F02E7C8EBB67D95BE /* libPods-GreetingHexJavascriptReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GreetingHexJavascriptReact.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B42B96E24B6D788D456A2F78 /* Pods-GreetingHexJavascriptReact.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreetingHexJavascriptReact.release.xcconfig"; path = "Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact.release.xcconfig"; sourceTree = "<group>"; };
+		C649907597E78E40C6637B3D /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig"; path = "Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig"; sourceTree = "<group>"; };
+		CFEF8DAEF48B6399C5DA71D3 /* Pods-GreetingHexJavascriptReact.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GreetingHexJavascriptReact.debug.xcconfig"; path = "Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact.debug.xcconfig"; sourceTree = "<group>"; };
+		DEDE40CAFBDFE52A8D0E54B5 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -53,7 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a in Frameworks */,
+				70085D1D86B399A37EA73327 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +61,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-GreetingHexJavascriptReact.a in Frameworks */,
+				09D8AE06E74A132AEFEBB003 /* libPods-GreetingHexJavascriptReact.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,8 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-GreetingHexJavascriptReact.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a */,
+				84ACE20F02E7C8EBB67D95BE /* libPods-GreetingHexJavascriptReact.a */,
+				DEDE40CAFBDFE52A8D0E54B5 /* libPods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -143,10 +143,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-GreetingHexJavascriptReact.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-GreetingHexJavascriptReact.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig */,
+				CFEF8DAEF48B6399C5DA71D3 /* Pods-GreetingHexJavascriptReact.debug.xcconfig */,
+				B42B96E24B6D788D456A2F78 /* Pods-GreetingHexJavascriptReact.release.xcconfig */,
+				0ECB4B54B6DDDE8AACC475D2 /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig */,
+				C649907597E78E40C6637B3D /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -158,12 +158,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "GreetingHexJavascriptReactTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				168D975D7AF141C0C61B16FE /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				B33DFBA1ACA09F59A6338CA6 /* [CP] Embed Pods Frameworks */,
+				B0FF6F1C62C0D61BD293DC65 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,13 +179,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "GreetingHexJavascriptReact" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				E98C10812A6AB0A7B11D058D /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				DC4634F0635E434AAEC998F1 /* [CP] Embed Pods Frameworks */,
+				494366894764BAA432821273 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,24 +269,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"$REACT_NATIVE_PATH/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"$REACT_NATIVE_PATH/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+		168D975D7AF141C0C61B16FE /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -308,7 +291,75 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		494366894764BAA432821273 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B0FF6F1C62C0D61BD293DC65 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B33DFBA1ACA09F59A6338CA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC4634F0635E434AAEC998F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E98C10812A6AB0A7B11D058D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -328,57 +379,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact/Pods-GreetingHexJavascriptReact-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests/Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -414,7 +414,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig */;
+			baseConfigurationReference = 0ECB4B54B6DDDE8AACC475D2 /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -441,7 +441,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig */;
+			baseConfigurationReference = C649907597E78E40C6637B3D /* Pods-GreetingHexJavascriptReact-GreetingHexJavascriptReactTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -465,11 +465,12 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-GreetingHexJavascriptReact.debug.xcconfig */;
+			baseConfigurationReference = CFEF8DAEF48B6399C5DA71D3 /* Pods-GreetingHexJavascriptReact.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7BNK4ZZL4R;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GreetingHexJavascriptReact/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
@@ -493,11 +494,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-GreetingHexJavascriptReact.release.xcconfig */;
+			baseConfigurationReference = B42B96E24B6D788D456A2F78 /* Pods-GreetingHexJavascriptReact.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 7BNK4ZZL4R;
 				INFOPLIST_FILE = GreetingHexJavascriptReact/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
