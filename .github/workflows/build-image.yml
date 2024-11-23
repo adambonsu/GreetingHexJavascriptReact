@@ -31,9 +31,12 @@ jobs:
               env:
                 ANDROID_DIR: ${{ github.workspace }}/android
               run: python scripts/clean_android_build.py
-            - name: Remove duplicate PackageList.java files
+            - name: Find duplicate PackageList.java files
               env:
                 ANDROID_DIR: ${{ github.workspace }}/android
+              run: python scripts/find_duplicate_package_list_classes.py
+            - name: Remove duplicate PackageList.java files
+              if: ${{ failure() }}
               run: |
                 duplicates=$(python scripts/find_duplicate_package_list_classes.py | grep -v "No duplicate")
                 if [ ! -z "$duplicates" ]; then
@@ -52,6 +55,15 @@ jobs:
               run: |
                 cd android
                 ./gradlew assembleRelease --info
+            - name: Upload Android APK
+              uses: actions/upload-artifact@v3
+              with:
+                  name: app-release.apk
+                  path: android/app/build/outputs/apk/release/app-release.apk
+            - name: Build Android APK
+              run: |
+                cd android
+                ./gradlew assembleRelease --stacktrace
             - name: Upload Android APK
               uses: actions/upload-artifact@v3
               with:
