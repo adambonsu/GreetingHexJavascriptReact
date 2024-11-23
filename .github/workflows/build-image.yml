@@ -31,10 +31,6 @@ jobs:
               run: |
                   cd android
                   ./gradlew clean
-            - name: Clean Android build again
-              env:
-                ANDROID_DIR: ${{ github.workspace }}/android
-              run: python scripts/clean_android_build.py
             - name: Find duplicate PackageList.java files
               env:
                 ANDROID_DIR: ${{ github.workspace }}/android
@@ -55,11 +51,6 @@ jobs:
                 ./gradlew generateAutolinkingPackageList
             - name: Clear Metro cache
               run: rm -rf $TMPDIR/metro-*
-            - name: Check dependencies
-              run: |
-                cd android
-                ./gradlew app:dependencies > dependencies.txt
-                cat dependencies.txt
             - name: Build Android APK
               run: |
                 cd android
