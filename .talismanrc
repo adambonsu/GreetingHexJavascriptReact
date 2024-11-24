@@ -28,7 +28,7 @@ fileignoreconfig:
 - filename: ios/GreetingHexJavascriptReact.xcodeproj/project.pbxproj
   checksum: bf8706613e637cb2dd974ce46b53b288f4f6e93a1090f0d4db56fc944d80cce1
 - filename: .github/workflows/build-image.yml
-  checksum: 4ec3ac87492bdd8ab0652add19d0f83148f6989d360260ae7a155da57caaca30
+  checksum: 7e53a24fc21e6c608ad9cf926c980eeeff304717c3a84bd63c2e02493a082516
 - filename: ios/exportOptions.plist
   checksum: 8348486783cdcdb525c35155b13a450a251fc529b9050aeb15ff0c438d437ef3
 version: ""
