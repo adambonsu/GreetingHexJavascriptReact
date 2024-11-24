@@ -10,38 +10,38 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v4
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Set up JDK 17
+              uses: actions/setup-java@v3
+              with:
+                java-version: '17'
+                distribution: 'temurin'
+            - name: Package tests
+              run: mvn package
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v4
               with:
                   aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
                   aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  role-to-assume: ${{ secrets.AWS_DEVICE_FARM_ROLE_ARN }}
                   aws-region: eu-west-2
             - name: Download Android APK
               uses: actions/download-artifact@v3
               with:
                   name: app-release.apk
-            - name: Download iOS IPA
-              uses: actions/download-artifact@v3
-              with:
-                  name: GreetingHexJavascriptReact.ipa
-            
             - name: Run tests on AWS Device Farm
-              uses: aws-actions/aws-devicefarm-mobile-device-testing@v1
+              uses: aws-actions/aws-devicefarm-mobile-device-testing@v2.0
               with:
-                  projectArn: ${{ secrets.AWS_DEVICE_FARM_PROJECT_ARN }}
-                  devicePoolArn: ${{ secrets.AWS_DEVICE_FARM_DEVICE_POOL_ARN }}
-                  appFile: app-release.apk
-                  testType: APPIUM_NODE
-                  testPackage: tests/android-tests.zip
-                  testSpec: tests/android-test-spec.yml
-          
-            - name: Run iOS tests on AWS Device Farm
-              uses: aws-actions/aws-devicefarm-mobile-device-testing@v1
-              with:
-                  projectArn: ${{ secrets.AWS_DEVICE_FARM_PROJECT_ARN }}
-                  devicePoolArn: ${{ secrets.AWS_DEVICE_FARM_DEVICE_POOL_IOS_ARN }}
-                  appFile: GreetingHexJavascriptReact.ipa
-                  testType: APPIUM_NODE
-                  testPackage: tests/ios-tests.zip
-                  testSpec: tests/ios-test-spec.yml
+                  run-settings-json: |
+                    {
+                      "name": "GitHubAction-${{ github.workflow }}_${{ github.run_id }}_${{ github.run_attempt }}",
+                      "projectArn": "${{ secrets.AWS_DEVICE_FARM_PROJECT_ARN }}",
+                      "appArn": "app-release.apk",
+                      "devicePoolArn": "Top Devices",
+                      "test": {
+                        "type": "APPIUM_NODE",
+                        "testPackageArn": target/tests-with-dependencies.zip",
+                        "testSpecArn": "tests/android-test-spec.yml"
+                      }
+                    }
