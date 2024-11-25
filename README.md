@@ -46,7 +46,41 @@ This is a CI/CD solution whereupon each push to main, builds iOS and android mob
         * Without network
 ```
 
-## Status
+## Hexagonal Architecture Overview
+
+Hexagonal Architecture, also known as Ports and Adaptors, is a software design pattern that aims to create loosly coupled application components.
+It separates the core logic of an application from its external concerns.
+
+Key components in this architecture are:
+1. Core: Contains the main business logic
+2. Ports: Interfaces that define how the core interacts with the outside world
+3. Adaptors: Implementations of ports that handle external interactions
+
+Benefits of this architecture include:
+* Separation of concerns
+* Improved testability
+* Flexibility to change external components without affecting the core logic
+
+
+## Full Stack Testing Overview
+
+Full Stack Testing is a comprehensive testing strategy that covers all layers of a software application, including the front-end, back-end, databases, APIs, and infrastructure. This approach ensures that the application works seamlessly from end to end, providing thorough validation of its functionalities, performance, security, and user experience
+
+Key Components of Full Stack Testing:
+* Testing for High Quality
+* Shift-Left Testing
+* All Components (UI, Service Layer, Data Layer) subjected to a stack of test techniques 
+   * Exploratory testing
+   * Automated Functional testing
+   * Continuous testing (CI/CD)
+   * Cross Functional testing
+   * Visual testing
+   * Security testing
+   * Performance testing
+   * Accessibility testing
+
+
+## Project Status
 
 ### Done
 * Mobile app serving a Greeting (react native)
