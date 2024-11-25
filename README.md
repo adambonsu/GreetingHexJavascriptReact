@@ -103,7 +103,7 @@ Key Components of Full Stack Testing:
 * Implement Automated Performance Tests
 * Implement Automated Security Tests
 * Implement Automated Accessibility Tests
-* Include a Service Layer (with associated api tests): https://github.com/adambonsu/GreetingHexJavascriptReact/issues/3
+* [Include a Service Layer (with associated api tests)](https://github.com/adambonsu/GreetingHexJavascriptReact/issues/3)
    * Implement Micro Tests
    * Implement Macro Tests
    * Implement User Flow Tests
