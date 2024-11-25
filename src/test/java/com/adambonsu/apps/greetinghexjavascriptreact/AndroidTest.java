@@ -15,6 +15,7 @@ public class AndroidTest extends BaseTest {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Emulator");
         capabilities.setCapability(MobileCapabilityType.APP, System.getenv("ANDROID_APP_PATH"));
+        capabilities.setCapability("automationName", "uiautomator2");
 
         System.out.println("AGOB: Capabilities: " + capabilities.toString());
         initializeDriver(capabilities);

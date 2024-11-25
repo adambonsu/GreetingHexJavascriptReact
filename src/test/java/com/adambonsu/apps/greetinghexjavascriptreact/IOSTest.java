@@ -13,6 +13,7 @@ public class IOSTest extends BaseTest {
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "iOS");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "iPhone Simulator");
         capabilities.setCapability(MobileCapabilityType.APP, System.getenv("IOS_APP_PATH"));
+        capabilities.setCapability("automationName", "xcuitest");
 
         initializeDriver(capabilities);
     }
