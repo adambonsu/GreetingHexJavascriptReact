@@ -1,79 +1,80 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Greeting Hex Javascript React
 
-# Getting Started
+[![Build Status](https://github.com/adambonsu/GreetingHexJavascriptReact/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/adambonsu/GreetingHexJavascriptReact/actions/workflows/ci-cd.yml)
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Problem
 
-## Step 1: Start the Metro Server
+In a world where loneliness lurks around every corner and technology seems to be both our best friend and worst enemy, people are desperately seeking a simple greeting to brighten their day. With half of adults experiencing the pangs of social isolation, it’s clear that we need a cheerful greeting from a friendly program to remind us that we’re not alone in this vast digital universe.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+### Who are our potential Customers?
+* What are the target customer segments for the business?
+    * Adults experiencing the pangs of social isolation
+* Which specific markets/countries the business is trying to expand to?
+    * Initially the UK (England, Ireland, Scotland, Wales)
+    * Then Europe
+    * Then the US
+* What are the top OSs and vendors in those markets?
+    * UK: https://gs.statcounter.com/vendor-market-share/mobile/united-kingdom
+        * Apple, Samsung
+    * Europe: https://gs.statcounter.com/vendor-market-share/mobile/europe
+        * Apple, Samsung, Xiaomi
+    * US: https://gs.statcounter.com/vendor-market-share/mobile/united-states-of-america
+        * Apple, Samsung, Google
+* Track production usage statistics if available
+    * feed back this info to inform which devices to use in future tests
 
-To start Metro, run the following command from the _root_ of your React Native project:
 
-```bash
-# using npm
-npm start
+## Solution 
 
-# OR using Yarn
-yarn start
+This is a CI/CD solution whereupon each push to main, builds iOS and android mobile versions, testing against devices that our customers use.
+
+
+### Test Strategy
+```
+    * Application
+        * Hexagonal architecture
+            * Flexible
+            * Testable
+        * Full Stack Testing 
+            * Functional
+            * Accessibility
+            * Security Testing
+            * Performance
+    * Device
+        * AWS Test Farm
+            * Test against most important devices on each commit
+    * Network
+        * With network
+        * Without network
 ```
 
-## Step 2: Start your Application
+## Status
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+### Done
+* Mobile app serving a Greeting (react native)
+* Test confirming app serves Greeting (java, JUnit) 
+* CI/CD Pipeline
+    * CI: Build Images
+        * IOS: [Archive failing](https://github.com/adambonsu/GreetingHexJavascriptReact/issues/1)
+        * Android: Complete
+    * CD:
+        * Functional test implemented: To be run against IOS and Android apps in AWS Device Farm
+        * IOS: [Blocked by Archive failing](https://github.com/adambonsu/GreetingHexJavascriptReact/issues/1)
+        * Android: [Configuring automatic device farm deployment and testing - WIP](https://github.com/adambonsu/GreetingHexJavascriptReact/issues/2)
 
-### For Android
 
-```bash
-# using npm
-npm run android
+### To do
+* Resolve [building iOS image on the pipeline](https://github.com/adambonsu/GreetingHexJavascriptReact/issues/1)
+* Configure react repo to run device tests via aws farm
+    * https://github.com/adambonsu/GreetingHexJavascriptReact/issues/2
+* Refactor core greeting out into javascript library that can be imported into this Mobile UI repository (Hexagonal Architecture)
+* Implement Automated Performance Tests
+* Implement Automated Security Tests
+* Implement Automated Accessibility Tests
+* Include a Service Layer (with associated api tests): https://github.com/adambonsu/GreetingHexJavascriptReact/issues/3
+   * Implement Micro Tests
+   * Implement Macro Tests
+   * Implement User Flow Tests
+* Implement Without Network tests
+* Implement With Network tests
 
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.

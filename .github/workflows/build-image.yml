@@ -60,33 +60,33 @@ jobs:
               with:
                   name: app-release.apk
                   path: android/app/build/outputs/apk/release/app-release.apk
-    # build-image-ios:
-    #     runs-on: macos-latest
-    #     steps:
-    #         - name: Checkout
-    #           uses: actions/checkout@v3
-    #         - name: Set up Node.js
-    #           uses: actions/setup-node@v3
-    #           with:
-    #               node-version: 20
-    #         - name: Install dependencies
-    #           run: npm ci
-    #         - name: Install CocoaPods
-    #           run: |
-    #             cd ios
-    #             pod install
-    #         - name: Set up code signing
-    #           uses: apple-actions/import-codesign-certs@v1
-    #           with:
-    #             p12-file-base64: ${{ secrets.IOS_P12_BASE64 }}
-    #             p12-password: ${{ secrets.IOS_P12_PASSWORD }}
-    #         - name: Build iOS IPA
-    #           run: |
-    #             cd ios
-    #             xcodebuild -workspace GreetingHexJavascriptReact.xcworkspace -scheme GreetingHexJavascriptReact -configuration Release -archivePath GreetingHexJavascriptReact.xarchive archive -allowProvisioningUpdates
-    #             xcodebuild -exportArchive -archivePath GreetingHexJavascriptReact.xarchive -exportOptionsPlist exportOptions.plist -exportPath . -allowProvisioningUpdates
-    #         - name: Upload iOS IPA
-    #           uses: actions/upload-artifact@v3
-    #           with:
-    #             name: GreetingHexJavascriptReact.ipa
-    #             path: ios/GreetingHexJavascriptReact.ipa
+    build-image-ios:
+        runs-on: macos-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 20
+            - name: Install dependencies
+              run: npm ci
+            - name: Install CocoaPods
+              run: |
+                cd ios
+                pod install
+            - name: Set up code signing
+              uses: apple-actions/import-codesign-certs@v1
+              with:
+                p12-file-base64: ${{ secrets.IOS_P12_BASE64 }}
+                p12-password: ${{ secrets.IOS_P12_PASSWORD }}
+            - name: Build iOS IPA
+              run: |
+                cd ios
+                xcodebuild -workspace GreetingHexJavascriptReact.xcworkspace -scheme GreetingHexJavascriptReact -configuration Release -archivePath GreetingHexJavascriptReact.xarchive archive -allowProvisioningUpdates
+                xcodebuild -exportArchive -archivePath GreetingHexJavascriptReact.xarchive -exportOptionsPlist exportOptions.plist -exportPath . -allowProvisioningUpdates
+            - name: Upload iOS IPA
+              uses: actions/upload-artifact@v3
+              with:
+                name: GreetingHexJavascriptReact.ipa
+                path: ios/GreetingHexJavascriptReact.ipa
