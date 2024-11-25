@@ -1,4 +1,4 @@
-package functional.java.com.adambonsu.apps.greetinghexjavascriptreact;
+package com.adambonsu.apps.greetinghexjavascriptreact;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;

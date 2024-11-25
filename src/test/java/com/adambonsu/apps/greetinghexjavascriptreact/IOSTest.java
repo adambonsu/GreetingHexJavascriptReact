@@ -1,8 +1,10 @@
-package functional.java.com.adambonsu.apps.greetinghexjavascriptreact;
+package com.adambonsu.apps.greetinghexjavascriptreact;
 
 import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.Test;
 
+@Test
 public class IOSTest extends BaseTest {
 
     @Override
