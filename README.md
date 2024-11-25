@@ -20,8 +20,6 @@ In a world where loneliness lurks around every corner and technology seems to be
         * Apple, Samsung, Xiaomi
     * US: https://gs.statcounter.com/vendor-market-share/mobile/united-states-of-america
         * Apple, Samsung, Google
-* Track production usage statistics if available
-    * feed back this info to inform which devices to use in future tests
 
 
 ## Solution 
@@ -65,9 +63,9 @@ This is a CI/CD solution whereupon each push to main, builds iOS and android mob
 
 ### To do
 * Resolve [building iOS image on the pipeline](https://github.com/adambonsu/GreetingHexJavascriptReact/issues/1)
-* Configure react repo to run device tests via aws farm
-    * https://github.com/adambonsu/GreetingHexJavascriptReact/issues/2
+* [Configure react repo to run device tests via aws farm](https://github.com/adambonsu/GreetingHexJavascriptReact/issues/2)
 * Refactor core greeting out into javascript library that can be imported into this Mobile UI repository (Hexagonal Architecture)
+* [Track production device usage statistics](https://github.com/adambonsu/GreetingHexJavascriptReact/issues/4)
 * Implement Automated Performance Tests
 * Implement Automated Security Tests
 * Implement Automated Accessibility Tests
@@ -75,6 +73,6 @@ This is a CI/CD solution whereupon each push to main, builds iOS and android mob
    * Implement Micro Tests
    * Implement Macro Tests
    * Implement User Flow Tests
-* Implement Without Network tests
-* Implement With Network tests
+* Implement `Without Network` tests
+* Implement `With Network` tests
 
