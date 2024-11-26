@@ -1,6 +1,9 @@
 package com.adambonsu.apps.greetinghexjavascriptreact;
 
 import io.appium.java_client.remote.MobileCapabilityType;
+
+import java.io.File;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 

@@ -1,6 +1,8 @@
 package com.adambonsu.apps.greetinghexjavascriptreact;
 
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.MobileElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterTest;
@@ -15,6 +17,7 @@ import java.util.logging.*;
 
 public abstract class BaseTest {
     protected AppiumDriver<MobileElement> driver;
+    protected AppiumDriverLocalService service;
     private static final Logger logger = Logger.getLogger(BaseTest.class.getName());
 
     @BeforeTest
@@ -31,6 +34,9 @@ public abstract class BaseTest {
         if (driver != null) {
             driver.quit();
         }
+        if(service != null) {
+            service.stop();
+        }
     }
 
     protected void initializeDriver(DesiredCapabilities capabilities) throws Exception {
@@ -40,7 +46,7 @@ public abstract class BaseTest {
             fileHandler.setFormatter(new SimpleFormatter());
             logger.addHandler(fileHandler);
             logger.info("Initialising driver with capabilities: " + capabilities.toString());
-            driver = new AppiumDriver<>(new URL("http://127.0.0.1:4723"), capabilities);
+            driver = new AppiumDriver<>(new URL("http://" + System.getenv("APPIUM_IP_ADDRESS") + ":" + System.getenv("APPIUM_PORT")), capabilities);
             logger.info("Driver initialised successfully" );
 
         } catch(Exception e) {
