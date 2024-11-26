@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 public class TestHelper {
     public static boolean isGreetingDisplayed(AppiumDriver driver) {
         try {
-            WebElement greetingElement = driver.findElement(By.xpath("//*[@text='Hello World']"));
+            WebElement greetingElement = driver.findElement(By.xpath("//*[@text='Hello Worldo!']"));
             return greetingElement.isDisplayed();
         } catch (Exception e) {
             return false;

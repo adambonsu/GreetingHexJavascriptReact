@@ -9,6 +9,7 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import io.appium.java_client.android.AndroidDriver;
 
+import java.time.Duration;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -52,6 +53,7 @@ public abstract class BaseTest {
                 driver = new AndroidDriver(
                     new URL("http://" + System.getenv("APPIUM_IP_ADDRESS") + ":" + System.getenv("APPIUM_PORT")),
                     options);
+                driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
             } else if(options instanceof XCUITestOptions) {
                 driver = new IOSDriver(
                     new URL("http://" + System.getenv("APPIUM_IP_ADDRESS") + ":" + System.getenv("APPIUM_PORT")),
