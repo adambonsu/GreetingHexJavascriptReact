@@ -4,6 +4,9 @@ import io.appium.java_client.remote.MobileCapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.Test;
 
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
 @Test
 public class AndroidTest extends BaseTest {
 
@@ -19,5 +22,7 @@ public class AndroidTest extends BaseTest {
 
         System.out.println("AGOB: Capabilities: " + capabilities.toString());
         initializeDriver(capabilities);
+
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     }
 }
