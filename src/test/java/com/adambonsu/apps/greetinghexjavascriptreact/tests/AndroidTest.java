@@ -22,7 +22,7 @@ public class AndroidTest extends BaseTest {
             .setApp(System.getenv("APP_PATH"))
             .setPlatformName("Android");
 
-        driver = new AndroidDriver(appiumConfig.getServiceUrl(), options);
+        driver = new AndroidDriver(appiumConfig.getServerURL(), options);
         configureDriverTimeouts();
 
     }

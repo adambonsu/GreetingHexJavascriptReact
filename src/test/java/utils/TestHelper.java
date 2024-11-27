@@ -1,4 +1,4 @@
-package com.adambonsu.apps.greetinghexjavascriptreact.utils;
+package test.java.utils;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
