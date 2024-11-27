@@ -1,7 +1,7 @@
 package com.adambonsu.apps.greetinghexjavascriptreact.base;
 
-import test.java.com.adambonsu.apps.greetinghexjavascriptreact.config.AppiumConfig;
-import test.java.utils.TestHelper;
+import com.adambonsu.apps.greetinghexjavascriptreact.config.AppiumConfig;
+import utils.TestHelper;
 import io.appium.java_client.AppiumDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -17,11 +17,13 @@ public abstract class BaseTest {
     protected AppiumConfig appiumConfig;
 
     @BeforeTest
-    public abstract void setUp() throws Exception;
+    public abstract void setUp() throws Exception, InterruptedException;
 
-    protected void configureDriverTimeouts() {
+    protected void configureDriverTimeouts() throws InterruptedException{
         if (driver != null) {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(300));
+            // driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+            // driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         }
     }
 

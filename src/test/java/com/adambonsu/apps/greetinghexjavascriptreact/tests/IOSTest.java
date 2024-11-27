@@ -1,7 +1,7 @@
 package com.adambonsu.apps.greetinghexjavascriptreact.tests;
 
 import com.adambonsu.apps.greetinghexjavascriptreact.base.BaseTest;
-import test.java.com.adambonsu.apps.greetinghexjavascriptreact.config.AppiumConfig;
+import com.adambonsu.apps.greetinghexjavascriptreact.config.AppiumConfig;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
 import org.testng.annotations.Test;
