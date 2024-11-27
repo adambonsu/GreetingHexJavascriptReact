@@ -11,10 +11,14 @@ import static org.testng.Assert.assertTrue;
 
 import java.time.Duration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public abstract class BaseTest {
     protected AppiumDriver driver;
     protected AppiumConfig appiumConfig;
+    protected static final Logger logger = LoggerFactory.getLogger(BaseTest.class);
 
     @BeforeTest
     public abstract void setUp() throws Exception, InterruptedException;

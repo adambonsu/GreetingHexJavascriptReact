@@ -80,4 +80,7 @@ yarn-error.log
 # Java
 target
 
+# Logging
+logs
+
 .ACTIVITY.md

@@ -9,15 +9,19 @@ import org.testng.annotations.BeforeClass;
 
 import java.sql.Timestamp;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class AndroidTest extends BaseTest {
+    private static final Logger logger = LoggerFactory.getLogger(AndroidTest.class);
 
     @Override @BeforeClass
     public void setUp() throws Exception {
-        System.out.println(new Timestamp(System.currentTimeMillis()) + ": DEBUG: AndroidTest::setUp(): 0");
+        logger.info("Setting up AndroidTest...");
         appiumConfig = new AppiumConfig();
-        System.out.println(new Timestamp(System.currentTimeMillis()) + ": DEBUG: AndroidTest::setUp(): 1");
+        logger.debug("Starting Appium service...");
         appiumConfig.startService();
-        System.out.println(new Timestamp(System.currentTimeMillis()) + ": DEBUG: AndroidTest::setUp(): 2");
+        logger.debug("Appium service started.");
 
         UiAutomator2Options options = new UiAutomator2Options()
             .setDeviceName(System.getenv("DEVICE_NAME"))
@@ -25,12 +29,12 @@ public class AndroidTest extends BaseTest {
             .setApp(System.getenv("APP_PATH"))
             .setPlatformName("Android");
         
-        System.out.println(new Timestamp(System.currentTimeMillis()) + ": DEBUG: AndroidTest::setUp(): 3");
+        logger.debug("Configuring driver..." + options);
 
         driver = new AndroidDriver(appiumConfig.getServerURL(), options);
-        System.out.println(new Timestamp(System.currentTimeMillis()) + ": DEBUG: AndroidTest::setUp(): 4");
+        logger.debug("Configuring driver timeouts...");
         configureDriverTimeouts();
-        System.out.println(new Timestamp(System.currentTimeMillis()) + ": DEBUG: AndroidTest::setUp(): 5");
+        logger.info("Set up completed");
 
     }
 }
