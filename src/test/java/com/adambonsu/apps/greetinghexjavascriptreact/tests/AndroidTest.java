@@ -6,10 +6,8 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
 
 import java.sql.Timestamp;
-import java.time.Duration;
 
 public class AndroidTest extends BaseTest {
 

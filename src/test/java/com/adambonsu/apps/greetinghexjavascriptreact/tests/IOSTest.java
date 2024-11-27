@@ -1,16 +1,15 @@
 package com.adambonsu.apps.greetinghexjavascriptreact.tests;
 
+import org.testng.annotations.BeforeClass;
+
 import com.adambonsu.apps.greetinghexjavascriptreact.base.BaseTest;
 import com.adambonsu.apps.greetinghexjavascriptreact.config.AppiumConfig;
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
-import org.testng.annotations.Test;
-import java.time.Duration;
 
-@Test
 public class IOSTest extends BaseTest {
 
-    @Override
+    @Override  @BeforeClass
     public void setUp() throws Exception {
         appiumConfig = new AppiumConfig();
         appiumConfig.startService();
