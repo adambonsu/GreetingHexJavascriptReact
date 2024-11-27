@@ -1,14 +1,15 @@
-package com.adambonsu.apps.greetinghexjavascriptreact;
+package com.adambonsu.apps.greetinghexjavascriptreact.utils;
 
-import org.openqa.selenium.WebElement;
-// import org.openqa.selenium.remote.RemoteWebElement;
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class TestHelper {
+    private static final String GREETING_XPATH = "//*[@text='Hello Worldo!']";
+
     public static boolean isGreetingDisplayed(AppiumDriver driver) {
         try {
-            WebElement greetingElement = driver.findElement(By.xpath("//*[@text='Hello Worldo!']"));
+            WebElement greetingElement = driver.findElement(By.xpath(GREETING_XPATH));
             return greetingElement.isDisplayed();
         } catch (Exception e) {
             return false;
