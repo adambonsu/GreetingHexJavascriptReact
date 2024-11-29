@@ -1,5 +1,16 @@
 # Developing
 
+## Android
+
+### Setting up local environment
+
+1. Open a terminal and launch metro with `npx react-native start`
+2. Open Android Studio
+  2.1. Start a device (Add a new device if necessary): Tools => Device Manager
+3. Run app against tests
+
+### Testing locally
+Execute following command via a terminal in the root directory of the project
 ```
 APPIUM_IP_ADDRESS="127.0.0.1" \
 APPIUM_PORT="4723" \
@@ -27,3 +38,43 @@ mvn test -Dtest=AndroidTest
 
 * `LOG_LEVEL` (optional)
   Logs configured to send to STDOUT and to `logs/application.log`. Log level can be configured using the `LOG_LEVEL` environment variable.
+
+
+### Building apk
+```
+cd android
+./gradlew assembleRelease
+
+```
+This command will build a release APK here: `android/app/build/outputs/apk/release/app-release.apk`
+
+### Packaging tests
+
+Execute following command via a terminal in the root directory of the project
+```
+APPIUM_IP_ADDRESS="127.0.0.1" \
+APPIUM_PORT="4723" \
+APPIUM_MAIN_JS_PATH="//PATH//TO//node_modules//appium//build//lib//main.js" \
+APP_PATH=/PATH/TO/GreetingHexJavascriptReact/android/app/build/outputs/apk/release/app-release.apk \
+DEVICE_NAME="Pixel 9 API 35" \
+LOG_LEVEL=INFO \
+mvn package -Dtest=AndroidTest
+```
+
+## iOS
+
+1. Open a terminal and launch metro with `npx react-native start`
+2. Open Android Studio
+  2.1. Start a device (Add a new device if necessary): Tools => Device Manager
+3. Run app against tests
+```
+APPIUM_IP_ADDRESS="127.0.0.1" \
+APPIUM_PORT="4723" \
+APPIUM_MAIN_JS_PATH="//PATH//TO//node_modules//appium//build//lib//main.js" \
+APP_PATH=./ios/GreetingHexJavascriptReact.ipa \
+DEVICE_NAME="iPhone 16 Pro Max" \
+LOG_LEVEL=INFO \
+mvn test -Dtest=IOSTest
+
+```
+The tests will be packaged in the target directory (`./target/tests-with-dependencies.zip`) if the package command completes successfully: 

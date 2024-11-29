@@ -21,6 +21,8 @@ DerivedData
 *.ipa
 *.xcuserstate
 **/.xcode.env.local
+ios/*.xcarchive
+ios/*.log
 
 # Android/IntelliJ
 #
