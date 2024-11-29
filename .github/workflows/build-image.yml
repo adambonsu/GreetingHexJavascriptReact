@@ -90,3 +90,26 @@ jobs:
               with:
                 name: GreetingHexJavascriptReact.ipa
                 path: ios/GreetingHexJavascriptReact.ipa
+    package-tests:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+            - name: Set up Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: 20
+            - name: Install dependencies
+              run: npm ci
+            - name: Set up JDK 17
+              uses: actions/setup-java@v3
+              with:
+                java-version: '17'
+                distribution: 'temurin'
+            - name: Package tests
+              run: mvn clean package -DskipTests=true
+            - name: Upload tests
+              uses: actions/upload-artifact@v4
+              with:
+                  name: tests-with-dependencies
+                  path: target/tests-with-dependencies.zip
