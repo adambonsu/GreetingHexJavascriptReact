@@ -29,6 +29,13 @@ jobs:
               with:
                   name: android-apk
                   path: .
+            - name: Download Packaged tests
+              uses: actions/download-artifact@v4
+              with:
+                  name: tests-with-dependencies
+                  path: .
+            - name: show files downloaded
+              run: ls -l ${{ github.workspace }}
             - name: Run tests on AWS Device Farm
               uses: aws-actions/aws-devicefarm-mobile-device-testing@v2.0
               with:
