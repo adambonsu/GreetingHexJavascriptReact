@@ -27,7 +27,8 @@ jobs:
             - name: Download Android APK
               uses: actions/download-artifact@v3
               with:
-                  name: app-release.apk
+                  name: android-apk
+                  path: .
             - name: Run tests on AWS Device Farm
               uses: aws-actions/aws-devicefarm-mobile-device-testing@v2.0
               with:
