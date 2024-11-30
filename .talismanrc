@@ -27,12 +27,12 @@ fileignoreconfig:
   checksum: 3464ce79fd6517c28beed0c4ad45e91281d1c6feb03b9b425bc87f5f365a8960
 - filename: ios/GreetingHexJavascriptReact.xcodeproj/project.pbxproj
   checksum: bf8706613e637cb2dd974ce46b53b288f4f6e93a1090f0d4db56fc944d80cce1
-- filename: .github/workflows/build-image.yml
-  checksum: 8844893c60b23dfcc486951d5f60f5040c35e1e063292c1d11952305c1133f26
 - filename: CONTRIBUTION.md
   checksum: c8b47d700c1734fce438fb83561334c8046e27c764992f257691bdc54b902871
 - filename: ios/DistributionSummary.plist
   checksum: c2f199f41562813cf3ba52aa2bd6b2a6f676d27783d261e0c85199378b2285b0
 - filename: ios/exportOptions.plist
   checksum: b649e4626197d05924f4eeb43900cd1817413a30240b1eb50eedeb905d1ff803
+- filename: .github/workflows/build-image.yml
+  checksum: 404f9d7d870c0c24a09825efad694df9be670873bdf81d59cbaf715d3f1b2ea1
 version: ""
