@@ -17,8 +17,6 @@ jobs:
               with:
                 java-version: '17'
                 distribution: 'temurin'
-            - name: Package tests
-              run: mvn clean package -DskipTests=true
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v4
               with:
