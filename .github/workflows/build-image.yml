@@ -115,7 +115,7 @@ jobs:
                 xcodebuild -workspace GreetingHexJavascriptReact.xcworkspace -scheme GreetingHexJavascriptReact -configuration Release -archivePath GreetingHexJavascriptReact.xarchive archive -allowProvisioningUpdates
                 xcodebuild -exportArchive -archivePath GreetingHexJavascriptReact.xarchive.xcarchive -exportOptionsPlist exportOptions.plist -exportPath . -allowProvisioningUpdates
             - name: Upload iOS IPA
-              uses: actions/upload-artifact@v3
+              uses: actions/upload-artifact@v4
               with:
                 name: GreetingHexJavascriptReact.ipa
                 path: ios/GreetingHexJavascriptReact.ipa
