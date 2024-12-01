@@ -28,14 +28,18 @@ jobs:
               uses: actions/download-artifact@v4
               with:
                   name: android-apk
-                  path: .
+                  path: ./tests/
+            - name: UnzipAndroid APK
+             run: |
+               cd tests
+               unzip android-apk.zip
             - name: Download Packaged tests
               uses: actions/download-artifact@v4
               with:
                   name: tests-with-dependencies
-                  path: .
+                  path: ./tests/
             - name: show files downloaded
-              run: ls -l ${{ github.workspace }}
+              run: ls -l ${{ github.workspace }}/tests/
             - name: Run tests on AWS Device Farm
               uses: aws-actions/aws-devicefarm-mobile-device-testing@v2.0
               with:
@@ -46,8 +50,8 @@ jobs:
                       "appArn": "app-release.apk",
                       "devicePoolArn": "Top Devices",
                       "test": {
-                        "type": "APPIUM_NODE",
-                        "testPackageArn": target/tests-with-dependencies.zip",
+                        "type": "APPIUM_JAVA_TESTNG",
+                        "testPackageArn": "tests/tests-with-dependencies.zip",
                         "testSpecArn": "tests/android-test-spec.yml"
                       }
                     }

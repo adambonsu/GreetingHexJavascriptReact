@@ -14,10 +14,12 @@ Execute following command via a terminal in the root directory of the project
 ```
 APPIUM_IP_ADDRESS="127.0.0.1" \
 APPIUM_PORT="4723" \
+APPIUM_BASEPATH="/" \
 APPIUM_MAIN_JS_PATH="//PATH//TO//node_modules//appium//build//lib//main.js" \
 APP_PATH=/PATH/TO/GreetingHexJavascriptReact/android/app/build/outputs/apk/release/app-release.apk \
 DEVICE_NAME="Pixel 9 API 35" \
 LOG_LEVEL=INFO \
+APPIUM_SERVER_MANAGEMENT=true \
 mvn test -Dtest=AndroidTest
 ```
 * `APPIUM_IP_ADDRESS`
@@ -26,19 +28,30 @@ mvn test -Dtest=AndroidTest
 * `APPIUM_PORT`
   Appium server's port
 
+* `APPIUM_BASEPATH`
+  Modern Appium server's have a "/" basepath. Legacy versions have "/wd/hub" as the basepath
+
 * `APPIUM_MAIN_JS_PATH`
   1. Run the following command: `ls -l $(which appium)`. The output will show a symbolic link indicating the location of the main.js file
   2. Use the path from step 1 to create a full path to main.js
 
 * `APP_PATH`
-  Path to application (APK or )
+  Path to application (APK or IPA)
 
 * `DEVICE_NAME`
   Name of Device
 
+* `PLATFORM_NAME` (optional)
+
+* `DEVICE_OS_VERSION` (optional)
+
+* `DEVICE_UDID` (optional)
+
 * `LOG_LEVEL` (optional)
   Logs configured to send to STDOUT and to `logs/application.log`. Log level can be configured using the `LOG_LEVEL` environment variable.
 
+* `APPIUM_SERVER_MANAGEMENT` (optional)
+  If 'true', test will start/stop the appium server for each test; otherwise the test suite assumes the appium server is running
 
 ### Building apk
 ```

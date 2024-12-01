@@ -1,0 +1,33 @@
+version: 0.1
+
+phases:
+  install:
+    commands:
+      - echo "Installing dependencies"
+      # Add any necessary installation commands
+  pre_test:
+    commands:
+      - echo "Setting up test environment"
+      # Add commands to prepare your test environment
+  test:
+    commands:
+      - echo "Starting tests on device: $DEVICEFARM_DEVICE_NAME"
+      - echo "App path: $DEVICEFARM_APP_PATH"
+      - echo "Platform: $DEVICEFARM_DEVICE_PLATFORM_NAME"
+      - echo "OS Version: $DEVICEFARM_DEVICE_OS_VERSION"
+      - echo "Device UDID: $DEVICEFARM_DEVICE_UDID"
+      - export DEVICE_NAME=$DEVICEFARM_DEVICE_NAME
+      - export APP_PATH=$DEVICEFARM_APP_PATH
+      - export APPIUM_SERVER_MANAGEMENT=false
+      - export PLATFORM_NAME=$DEVICEFARM_DEVICE_PLATFORM_NAME
+      - export DEVICE_OS_VERSION=$DEVICEFARM_DEVICE_OS_VERSION
+      - export DEVICE_UDID=$DEVICEFARM_DEVICE_UDID
+      - cd $DEVICEFARM_TEST_PACKAGE_PATH
+      - mvn test -Dtest=AndroidTest
+  post_test:
+    commands:
+      - echo "Cleaning up after tests"
+      # Add any cleanup commands
+
+artifacts:
+  - $DEVICEFARM_LOG_DIR
