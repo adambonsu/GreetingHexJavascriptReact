@@ -29,11 +29,6 @@ jobs:
               with:
                   name: android-apk
                   path: ./tests/
-            - name: UnzipAndroid APK
-              run: |
-               cd tests
-               ls -l
-               unzip android-apk.zip
             - name: Download Packaged tests
               uses: actions/download-artifact@v4
               with:
