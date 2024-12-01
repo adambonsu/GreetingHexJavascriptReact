@@ -32,6 +32,7 @@ jobs:
             - name: UnzipAndroid APK
               run: |
                cd tests
+               ls -l
                unzip android-apk.zip
             - name: Download Packaged tests
               uses: actions/download-artifact@v4
