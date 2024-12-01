@@ -5,6 +5,7 @@ import io.appium.java_client.service.local.AppiumServiceBuilder;
 import io.appium.java_client.service.local.flags.GeneralServerFlag;
 
 import java.io.File;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import org.slf4j.Logger;
@@ -12,8 +13,17 @@ import org.slf4j.LoggerFactory;
 
 public class AppiumConfig {
     private AppiumDriverLocalService service;
-    private URL serverURL;
+    private URL remoteServerURL;
     private static final Logger logger = LoggerFactory.getLogger(AppiumConfig.class);
+
+    public AppiumConfig(String appiumRemoteAddress) {
+        try {
+            remoteServerURL = new URL(appiumRemoteAddress);
+        } catch(MalformedURLException e) {
+            logger.error("Exception: {}", e);
+        }
+
+    }
 
     public void startService() {
         logger.info("Starting Appium service...");
@@ -27,8 +37,8 @@ public class AppiumConfig {
         logger.debug("Starting service...");
         service.start();
         logger.debug("Getting server URL...");
-        serverURL = service.getUrl();
-        logger.info("Appium service started on URL: {}", serverURL);
+        remoteServerURL = service.getUrl();
+        logger.info("Appium service started on URL: {}", remoteServerURL);
     }
 
     public void stopService() {
@@ -37,7 +47,8 @@ public class AppiumConfig {
         }
     }
 
-    public URL getServerURL() {
-        return serverURL;
+    public URL getRemoteServerURL() {
+        logger.debug("getRemoteServerURL(): remoteServerURL: {}", remoteServerURL);
+        return remoteServerURL;
     }
 }

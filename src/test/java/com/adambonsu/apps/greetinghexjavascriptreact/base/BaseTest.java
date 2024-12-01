@@ -9,11 +9,8 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-import java.sql.Timestamp;
 import java.time.Duration;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,20 +26,24 @@ public abstract class BaseTest {
         logger.debug("APPIUM_SERVER_MANAGEMENT:{}", System.getenv("APPIUM_SERVER_MANAGEMENT"));
 
         try {
+            appiumConfig = new AppiumConfig(buildRemoteAddressFromEnvironmentVariables());
             if(System.getenv("APPIUM_SERVER_MANAGEMENT") != null && System.getenv("APPIUM_SERVER_MANAGEMENT").toLowerCase().equals("true")) {
                 logger.info("Configuring Appium service...");
-                appiumConfig = new AppiumConfig();
                 logger.debug("Starting Appium service...");
                 appiumConfig.startService();
                 logger.debug("Appium service started.");
             } else {
-                logger.info("No Appium service setup configured by test.");
+                logger.info("Appium service setup not configured.");
             }
         } catch (Exception e) {
             logger.error("Exception: {}", e);
             throw e;
         }
         
+    }
+
+    private String buildRemoteAddressFromEnvironmentVariables() {
+        return "http://" + System.getenv("APPIUM_IP_ADDRESS") + ":" + System.getenv("APPIUM_PORT") + System.getenv("APPIUM_BASEPATH") ;
     }
 
     protected void configureDriverTimeouts() throws InterruptedException{
