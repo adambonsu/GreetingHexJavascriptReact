@@ -30,7 +30,7 @@ jobs:
                   name: android-apk
                   path: ./tests/
             - name: UnzipAndroid APK
-             run: |
+              run: |
                cd tests
                unzip android-apk.zip
             - name: Download Packaged tests
