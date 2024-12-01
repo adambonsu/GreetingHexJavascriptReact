@@ -26,7 +26,7 @@ public class AppiumConfig {
         service = builder.build();
         logger.debug("Starting service...");
         service.start();
-        logger.debug("Service started");
+        logger.debug("Getting server URL...");
         serverURL = service.getUrl();
         logger.info("Appium service started on URL: {}", serverURL);
     }

@@ -1,13 +1,10 @@
 package com.adambonsu.apps.greetinghexjavascriptreact.tests;
 
 import com.adambonsu.apps.greetinghexjavascriptreact.base.BaseTest;
-import com.adambonsu.apps.greetinghexjavascriptreact.config.AppiumConfig;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 
 import org.testng.annotations.BeforeClass;
-
-import java.sql.Timestamp;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -17,11 +14,7 @@ public class AndroidTest extends BaseTest {
 
     @Override @BeforeClass
     public void setUp() throws Exception {
-        logger.info("Setting up AndroidTest...");
-        appiumConfig = new AppiumConfig();
-        logger.debug("Starting Appium service...");
-        appiumConfig.startService();
-        logger.debug("Appium service started.");
+        super.setUp();
 
         UiAutomator2Options options = new UiAutomator2Options()
             .setDeviceName(System.getenv("DEVICE_NAME"))
