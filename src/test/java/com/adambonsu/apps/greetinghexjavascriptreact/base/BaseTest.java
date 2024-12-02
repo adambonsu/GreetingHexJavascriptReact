@@ -60,13 +60,19 @@ public abstract class BaseTest {
 
     @AfterTest
     public void tearDown() {
+        logger.info("Tearing down base...");
         if (driver != null) {
+            logger.debug("Quitting driver...");
             driver.quit();
+            logger.debug("Driver has quit.");
         }
         if(System.getenv("APPIUM_SERVER_MANAGEMENT") != null && System.getenv("APPIUM_SERVER_MANAGEMENT").toLowerCase().toLowerCase().equals("true")) {
             if(appiumConfig != null) {
+                logger.debug("Stopping Appium service...");
                 appiumConfig.stopService();
+                logger.debug("Appium service stopped.");
             }
         }  
+        logger.info("Base torn down.");
     }
 }

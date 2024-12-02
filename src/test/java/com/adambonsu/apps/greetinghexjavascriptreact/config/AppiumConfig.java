@@ -20,7 +20,7 @@ public class AppiumConfig {
         try {
             remoteServerURL = new URL(appiumRemoteAddress);
         } catch(MalformedURLException e) {
-            logger.error("Exception: {}", e);
+            logger.error("Exception:" + e.getMessage());
         }
 
     }
