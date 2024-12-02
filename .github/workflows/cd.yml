@@ -24,6 +24,8 @@ jobs:
                   aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                   aws-region: us-west-2
                   role-to-assume: ${{ secrets.AWS_DEVICE_FARM_ROLE_ARN }}
+                  role-session-name: GitHubActionsSession
+                  role-skip-session-tagging: true
             - name: Download Android APK
               uses: actions/download-artifact@v4
               with:
