@@ -48,9 +48,7 @@ public abstract class BaseTest {
 
     protected void configureDriverTimeouts() throws InterruptedException{
         if (driver != null) {
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(300));
-            // driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-            // driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
         }
     }
 

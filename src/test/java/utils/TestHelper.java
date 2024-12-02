@@ -17,9 +17,9 @@ public class TestHelper {
 
     public static boolean isGreetingDisplayed(AppiumDriver driver) {
         try {
-            System.out.println(new Timestamp(System.currentTimeMillis()) + ": DEBUG: isGreetingDisplayed(): 0");
+            logger.info("isGreetingDisplayed() Starting...");
             WebElement greetingElement = driver.findElement(By.xpath(GREETING_XPATH));
-            System.out.println(new Timestamp(System.currentTimeMillis()) + ": DEBUG: isGreetingDisplayed(): 1: " + greetingElement.isDisplayed());
+            logger.debug("isGreetingDisplayed(): {}}", greetingElement.isDisplayed());
             return greetingElement.isDisplayed();
         } catch (Exception e) {
             logger.error("Exception in isGreetingDisplayed: {}", e);
