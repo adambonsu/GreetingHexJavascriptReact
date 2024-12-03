@@ -123,6 +123,8 @@ phases:
   # we recommend adding them to this section.
   post_test:
     commands:
+      - echo "MVN Logs:"
+      - cat $DEVICEFARM_LOG_DIR/mvn_test.log
       - echo "Appium Logs:"
       - cat $DEVICEFARM_LOG_DIR/appium.log
       - echo "Cleaning up after tests"
