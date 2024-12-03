@@ -95,8 +95,8 @@ phases:
       - echo "APPIUM_SERVER_MANAGEMENT:" $APPIUM_SERVER_MANAGEMENT
 
       # Your test package is downloaded and unpackaged into the $DEVICEFARM_TEST_PACKAGE_PATH directory.
-      - echo "Navigate to test package directory:" $DEVICEFARM_TEST_PACKAGE_PATH
-      - cd $DEVICEFARM_TEST_PACKAGE_PATH
+      # - echo "Navigate to test package directory:" $DEVICEFARM_TEST_PACKAGE_PATH
+      # - cd $DEVICEFARM_TEST_PACKAGE_PATH
       - echo "Starting the Appium TestNG test"
 
       # The following command runs your Appium Java TestNG test.
