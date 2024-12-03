@@ -47,6 +47,7 @@ jobs:
                       "projectArn": "${{ secrets.AWS_DEVICE_FARM_PROJECT_ARN }}",
                       "appArn": "app-release.apk",
                       "devicePoolArn": "Top Devices",
+                      "networkProfileArn": "Standard_WiFi_Profile",
                       "test": {
                         "type": "APPIUM_JAVA_TESTNG",
                         "testPackageArn": "tests/tests-with-dependencies.zip",
