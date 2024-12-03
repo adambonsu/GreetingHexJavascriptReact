@@ -100,7 +100,7 @@ phases:
       - mvn --version
       - pwd
       - echo "Current directory contents:"
-      - ls -lR .
+      - find .  -type f -exec ls -l {} \;
       - echo "Test package contents:"
       - find $DEVICEFARM_TEST_PACKAGE_PATH -type f -exec ls -l {} \;
 
