@@ -108,7 +108,7 @@ phases:
       # For more information, please see TestNG's documentation here:
       # http://testng.org/doc/documentation-main.html#running-testng
       - cd $DEVICEFARM_TEST_PACKAGE_PATH
-      - mvn test -Dtest=AndroidTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
+      - mvn test -Dtest=com.adambonsu.apps.greetinghexjavascriptreact.tests.AndroidTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
 
       # To run your tests with a testng.xml file, use the following commands instead:
       # - echo "Unzipping the tests JAR file"
