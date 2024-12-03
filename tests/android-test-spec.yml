@@ -85,7 +85,7 @@ phases:
       - export TEST_SCREENSHOT_PATH=$DEVICEFARM_SCREENSHOT_PATH
       - export TEST_LOG_DIR=$DEVICEFARM_LOG_DIR
 
-      - echo "Starting tests on device: $DEVICE_NAME"
+      - echo "Starting tests on device"
       - echo "APP_PATH: $APP_PATH"
       - echo "PLATFORM_NAME: $PLATFORM_NAME"
       - echo "DEVICE_OS_VERSION: $DEVICE_OS_VERSION"
