@@ -102,8 +102,9 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>11</source>
+                    <target>11</target>
+                    <testOutputDirectory>${project.build.directory}/test-classes</testOutputDirectory>
                 </configuration>
             </plugin>
             <plugin>
@@ -111,6 +112,10 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0</version>
                 <configuration>
+                    <testClassesDirectory>${project.build.directory}/test-classes</testClassesDirectory>
+                    <includes>
+                        <include>**/*Test.java</include>
+                    </includes>
                     <failIfNoTests>true</failIfNoTests>
                     <failIfNoSpecifiedTests>true</failIfNoSpecifiedTests>
                 </configuration>
