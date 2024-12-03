@@ -6,7 +6,12 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
+      - mvn clean install -DskipTests=true
       # Add any necessary installation commands
+      - echo "Copying test classes to testClassesDirectory"
+      - mkdir -p $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes
+      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/src/test/java/$DEVICEFARM_TEST_PACKAGE_PATH/com $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
+      - cp -R $DEVICEFARM_TEST_PACKAGE_PATHutils $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
 
       # The Appium server is written using Node.js. In order to run your desired version of Appium,
       # you first need to set up a Node.js environment that is compatible with your version of Appium.
