@@ -97,16 +97,17 @@ phases:
       # Your test package is downloaded and unpackaged into the $DEVICEFARM_TEST_PACKAGE_PATH directory.
       # - echo "Navigate to test package directory:" $DEVICEFARM_TEST_PACKAGE_PATH
       # - cd $DEVICEFARM_TEST_PACKAGE_PATH
-      - echo "Current directory:" $PWD
+      - mvn --version
+      - pwd
       - echo "Current directory contents:"
       - ls -lR .
       - echo "Test package contents:"
       - find $DEVICEFARM_TEST_PACKAGE_PATH -type f -exec ls -l {} \;
-      - echo "Starting the Appium TestNG test"
 
       # The following command runs your Appium Java TestNG test.
       # For more information, please see TestNG's documentation here:
       # http://testng.org/doc/documentation-main.html#running-testng
+      - cd $DEVICEFARM_TEST_PACKAGE_PATH
       - mvn test -Dtest=AndroidTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
 
       # To run your tests with a testng.xml file, use the following commands instead:
