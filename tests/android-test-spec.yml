@@ -97,8 +97,11 @@ phases:
       # Your test package is downloaded and unpackaged into the $DEVICEFARM_TEST_PACKAGE_PATH directory.
       # - echo "Navigate to test package directory:" $DEVICEFARM_TEST_PACKAGE_PATH
       # - cd $DEVICEFARM_TEST_PACKAGE_PATH
+      - echo "Current directory:" $PWD
+      - echo "Current directory contents:"
+      - ls -lR .
       - echo "Test package contents:"
-      - ls -R $DEVICEFARM_TEST_PACKAGE_PATH
+      - find $DEVICEFARM_TEST_PACKAGE_PATH -type f -exec ls -l {} \;
       - echo "Starting the Appium TestNG test"
 
       # The following command runs your Appium Java TestNG test.

@@ -23,5 +23,12 @@ assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
                 <include>/dependency-jars/</include>
             </includes>
         </fileSet>
+        <fileSet>
+          <directory>${project.basedir}</directory>
+          <outputDirectory>/</outputDirectory>
+          <includes>
+            <include>pom.xml</include>
+          </includes>
+        </fileSet>
     </fileSets>
 </assembly>
