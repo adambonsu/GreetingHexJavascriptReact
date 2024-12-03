@@ -14,7 +14,7 @@ Execute following command via a terminal in the root directory of the project
 ```
 APPIUM_IP_ADDRESS="127.0.0.1" \
 APPIUM_PORT="4723" \
-APPIUM_BASEPATH="/" \
+APPIUM_BASE_PATH="/" \
 APPIUM_MAIN_JS_PATH="//PATH//TO//node_modules//appium//build//lib//main.js" \
 APP_PATH=/PATH/TO/GreetingHexJavascriptReact/android/app/build/outputs/apk/release/app-release.apk \
 DEVICE_NAME="Pixel 9 API 35" \
@@ -28,7 +28,7 @@ mvn test -Dtest=AndroidTest
 * `APPIUM_PORT`
   Appium server's port
 
-* `APPIUM_BASEPATH`
+* `APPIUM_BASE_PATH`
   Modern Appium server's have a "/" basepath. Legacy versions have "/wd/hub" as the basepath
 
 * `APPIUM_MAIN_JS_PATH`
@@ -71,7 +71,7 @@ This command will build a release APK here: `android/app/build/outputs/apk/relea
 ```
 APPIUM_IP_ADDRESS="127.0.0.1" \
 APPIUM_PORT="4723" \
-APPIUM_BASEPATH="/" \
+APPIUM_BASE_PATH="/" \
 APPIUM_MAIN_JS_PATH="//PATH//TO//node_modules//appium//build//lib//main.js" \
 APP_PATH=./ios/GreetingHexJavascriptReact.ipa \
 DEVICE_NAME="iPhone 16 Pro Max" \
