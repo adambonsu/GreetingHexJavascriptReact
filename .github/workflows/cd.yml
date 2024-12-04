@@ -46,7 +46,7 @@ jobs:
                       "name": "GitHubAction-${{ github.workflow }}_${{ github.run_id }}_${{ github.run_attempt }}",
                       "projectArn": "${{ secrets.AWS_DEVICE_FARM_PROJECT_ARN }}",
                       "appArn": "tests/app-release.apk",
-                      "devicePoolArn": "SingleAndroidPhone",
+                      "devicePoolArn": "Top Devices",
                       "test": {
                         "type": "APPIUM_JAVA_TESTNG",
                         "testPackageArn": "tests/tests-with-dependencies.zip",
