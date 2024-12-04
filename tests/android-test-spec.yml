@@ -10,8 +10,8 @@ phases:
       # Add any necessary installation commands
       - echo "Copying test classes to testClassesDirectory"
       - mkdir -p $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes
-      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/src/test/java/$DEVICEFARM_TEST_PACKAGE_PATH/com $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
-      - cp -R $DEVICEFARM_TEST_PACKAGE_PATHutils $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
+      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/com $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
+      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/utils $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
       - echo "Target classes:"
       - find $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes -type f -exec ls -l {} \;
 
