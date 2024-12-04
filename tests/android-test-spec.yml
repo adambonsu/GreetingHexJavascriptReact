@@ -6,7 +6,9 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      # Add any necessary installation commands
+      # Add any necessary installation commands\
+      - echo "Copying test classes to testClassesDirectory"
+      - mkdir -p $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes
       - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/com $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
       - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/utils $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
 
