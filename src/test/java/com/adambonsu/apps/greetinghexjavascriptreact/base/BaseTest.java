@@ -43,7 +43,9 @@ public abstract class BaseTest {
     }
 
     private String buildRemoteAddressFromEnvironmentVariables() {
-        return "http://" + System.getenv("APPIUM_IP_ADDRESS") + ":" + System.getenv("APPIUM_PORT") + System.getenv("APPIUM_BASE_PATH") ;
+        String appiumRemoteAddress = "http://" + System.getenv("APPIUM_IP_ADDRESS") + ":" + System.getenv("APPIUM_PORT") + System.getenv("APPIUM_BASE_PATH");
+        logger.debug("appiumRemoteAddress: {}", appiumRemoteAddress);
+        return appiumRemoteAddress;
     }
 
     protected void configureDriverTimeouts() throws InterruptedException{

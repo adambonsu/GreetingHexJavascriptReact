@@ -77,8 +77,11 @@ phases:
   test:
     commands:
       - export DEVICE_NAME=$DEVICEFARM_DEVICE_NAME
-      - export APP_PATH=$DEVICEFARM_APP_PATH
+      - export APPIUM_IP_ADDRESS="127.0.0.1"
+      - export APPIUM_PORT="4723"
+      - export APPIUM_BASE_PATH="/wd/hub"
       - export APPIUM_SERVER_MANAGEMENT=false
+      - export APP_PATH=$DEVICEFARM_APP_PATH
       - export PLATFORM_NAME=$DEVICEFARM_DEVICE_PLATFORM_NAME
       - export DEVICE_OS_VERSION=$DEVICEFARM_DEVICE_OS_VERSION
       - export DEVICE_UDID=$DEVICEFARM_DEVICE_UDID
