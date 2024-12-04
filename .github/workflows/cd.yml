@@ -7,8 +7,56 @@ concurrency:
     group: cd ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
     cancel-in-progress: true
 jobs:
-    deploy:
+    device-test-ios:
         runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Set up JDK 17
+              uses: actions/setup-java@v4
+              with:
+                java-version: '17'
+                distribution: 'temurin'
+            - name: Configure AWS credentials
+              uses: aws-actions/configure-aws-credentials@v4
+              with:
+                  aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+                  aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  aws-region: us-west-2
+                  role-to-assume: ${{ secrets.AWS_DEVICE_FARM_ROLE_ARN }}
+                  role-session-name: GitHubActionsSession
+                  role-skip-session-tagging: true
+            - name: Download IOS Image
+              uses: actions/download-artifact@v4
+              with:
+                  name: ios-ipa
+                  path: ./tests/
+            - name: Download Packaged tests
+              uses: actions/download-artifact@v4
+              with:
+                  name: tests-with-dependencies
+                  path: ./tests/
+            - name: Test IOS App on AWS Device Farm
+              uses: aws-actions/aws-devicefarm-mobile-device-testing@v2.3
+              with:
+                  run-settings-json: |
+                    {
+                      "name": "GitHubAction-${{ github.workflow }}_${{ github.run_id }}_${{ github.run_attempt }}",
+                      "projectArn": "${{ secrets.AWS_DEVICE_FARM_PROJECT_ARN }}",
+                      "appArn": "tests/GreetingHexJavascriptReact.ipa",
+                      "devicePoolArn": "Single Device",
+                      "test": {
+                        "type": "APPIUM_JAVA_TESTNG",
+                        "testPackageArn": "tests/tests-with-dependencies.zip",
+                        "testSpecArn": "tests/ios-test-spec.yml"
+                      },
+                      "configuration": {
+                        "networkProfileArn": "Standard_WiFi_Profile"
+                      }
+                    }
+    device-test-android:
+        runs-on: ubuntu-latest
+        if: false
         steps:
             - name: Checkout
               uses: actions/checkout@v4
@@ -31,18 +79,11 @@ jobs:
               with:
                   name: android-apk
                   path: ./tests/
-            - name: Download IOS Image
-              uses: actions/download-artifact@v4
-              with:
-                  name: ios-ipa
-                  path: ./tests/
             - name: Download Packaged tests
               uses: actions/download-artifact@v4
               with:
                   name: tests-with-dependencies
                   path: ./tests/
-            - name: show files downloaded
-              run: ls -l ${{ github.workspace }}/tests/
             - name: Test Android App on AWS Device Farm
               uses: aws-actions/aws-devicefarm-mobile-device-testing@v2.3
               with:
@@ -51,29 +92,11 @@ jobs:
                       "name": "GitHubAction-${{ github.workflow }}_${{ github.run_id }}_${{ github.run_attempt }}",
                       "projectArn": "${{ secrets.AWS_DEVICE_FARM_PROJECT_ARN }}",
                       "appArn": "tests/app-release.apk",
-                      "devicePoolArn": "Top Devices",
+                      "devicePoolArn": "Single Device",
                       "test": {
                         "type": "APPIUM_JAVA_TESTNG",
                         "testPackageArn": "tests/tests-with-dependencies.zip",
                         "testSpecArn": "tests/android-test-spec.yml"
-                      },
-                      "configuration": {
-                        "networkProfileArn": "Standard_WiFi_Profile"
-                      }
-                    }
-            - name: Test IOS App on AWS Device Farm
-              uses: aws-actions/aws-devicefarm-mobile-device-testing@v2.3
-              with:
-                  run-settings-json: |
-                    {
-                      "name": "GitHubAction-${{ github.workflow }}_${{ github.run_id }}_${{ github.run_attempt }}",
-                      "projectArn": "${{ secrets.AWS_DEVICE_FARM_PROJECT_ARN }}",
-                      "appArn": "tests/GreetingHexJavascriptReact.ipa",
-                      "devicePoolArn": "Top Devices",
-                      "test": {
-                        "type": "APPIUM_JAVA_TESTNG",
-                        "testPackageArn": "tests/tests-with-dependencies.zip",
-                        "testSpecArn": "tests/ios-test-spec.yml"
                       },
                       "configuration": {
                         "networkProfileArn": "Standard_WiFi_Profile"
