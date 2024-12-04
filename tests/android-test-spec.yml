@@ -24,8 +24,18 @@ phases:
       # - appium driver uninstall uiautomator2
       # - appium driver install uiautomator2@2.34.0
 
+      - export DEVICE_NAME=$DEVICEFARM_DEVICE_NAME
+      - export APPIUM_IP_ADDRESS="127.0.0.1"
+      - export APPIUM_PORT="4723"
       # We recommend setting the Appium server's base path explicitly for accepting commands.
       - export APPIUM_BASE_PATH=/wd/hub
+      - export APPIUM_SERVER_MANAGEMENT=false
+      - export APP_PATH=$DEVICEFARM_APP_PATH
+      - export PLATFORM_NAME=$DEVICEFARM_DEVICE_PLATFORM_NAME
+      - export DEVICE_OS_VERSION=$DEVICEFARM_DEVICE_OS_VERSION
+      - export DEVICE_UDID=$DEVICEFARM_DEVICE_UDID
+      - export TEST_SCREENSHOT_PATH=$DEVICEFARM_SCREENSHOT_PATH
+      - export TEST_LOG_DIR=$DEVICEFARM_LOG_DIR
 
       # Use the devicefarm-cli to setup a Java environment, with which we can run the test suite.
       - devicefarm-cli use java 11
@@ -76,19 +86,6 @@ phases:
 
   test:
     commands:
-      - export DEVICE_NAME=$DEVICEFARM_DEVICE_NAME
-      - export APPIUM_IP_ADDRESS="127.0.0.1"
-      - export APPIUM_PORT="4723"
-      - export APPIUM_BASE_PATH="/wd/hub"
-      - export APPIUM_SERVER_MANAGEMENT=false
-      - export APP_PATH=$DEVICEFARM_APP_PATH
-      - export PLATFORM_NAME=$DEVICEFARM_DEVICE_PLATFORM_NAME
-      - export DEVICE_OS_VERSION=$DEVICEFARM_DEVICE_OS_VERSION
-      - export DEVICE_UDID=$DEVICEFARM_DEVICE_UDID
-      - export TEST_SCREENSHOT_PATH=$DEVICEFARM_SCREENSHOT_PATH
-      - export TEST_LOG_DIR=$DEVICEFARM_LOG_DIR
-
-      - echo "Starting tests on device"
       - echo "SHELL:" $SHELL
       - echo "APP_PATH:" $APP_PATH
       - echo "PLATFORM_NAME:" $PLATFORM_NAME
@@ -99,7 +96,6 @@ phases:
 
       # Your test package is downloaded and unpackaged into the $DEVICEFARM_TEST_PACKAGE_PATH directory.
       # - echo "Navigate to test package directory:" $DEVICEFARM_TEST_PACKAGE_PATH
-      # - cd $DEVICEFARM_TEST_PACKAGE_PATH
       - mvn --version
       - pwd
       - echo "Current directory contents:"
@@ -114,7 +110,7 @@ phases:
       - mkdir -p target/test-classes
       - cp -pr com target/test-classes/
       - cp -pr utils target/test-classes/
-      - find . -type f -exec ls -l {} \;
+      - echo "Starting tests on device"
       - mvn test -Dtest=AndroidTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
 
       # To run your tests with a testng.xml file, use the following commands instead:
