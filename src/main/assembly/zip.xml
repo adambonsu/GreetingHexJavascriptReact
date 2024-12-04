@@ -25,7 +25,7 @@ assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
         </fileSet>
         <fileSet>
             <directory>${project.build.testOutputDirectory}</directory>
-            <outputDirectory>/target/classes</outputDirectory>
+            <outputDirectory>/target/test-classes</outputDirectory>
         </fileSet>
         <fileSet>
             <directory>${project.basedir}</directory>
