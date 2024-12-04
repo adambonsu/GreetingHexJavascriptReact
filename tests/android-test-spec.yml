@@ -7,6 +7,8 @@ phases:
     commands:
       - echo "Installing dependencies"
       # Add any necessary installation commands
+      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/com $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
+      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/utils $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
 
       # The Appium server is written using Node.js. In order to run your desired version of Appium,
       # you first need to set up a Node.js environment that is compatible with your version of Appium.
