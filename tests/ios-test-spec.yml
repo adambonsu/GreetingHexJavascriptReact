@@ -1,28 +1,50 @@
 version: 0.1
+# These default test spec file commands assume that the test package has been built in accordance
+# with the instructions in AWS Device Farm's documentation for testing with Appium Java TestNG:
+# https://docs.aws.amazon.com/devicefarm/latest/developerguide/test-types-appium.html
 
-android_test_host: amazon_linux_2
+# Note that iOS 17 and above devices use a test host with an Apple silicon CPU, whereas
+# iOS 16 and below devices use a test host with an Intel CPU.
 
+# Phases represent collections of commands that are executed during your test run on the test host.
 phases:
+
+  # The install phase contains commands for installing dependencies to run your tests.
+  # For your convenience, certain dependencies are preinstalled on the test host. 
+
+  # Java is preinstalled and preconfigured on the test host. For iOS 17 and above devices, tests run
+  # using Java version 11, whereas iOS 16 and below devices run tests using Java version 12.
+  # Additionally, you can use the Node.JS tools nvm, npm, and avm to setup your Appium server.
   install:
     commands:
-      - echo "Installing dependencies"
-      # Add any necessary installation commands\
-
       # The Appium server is written using Node.js. In order to run your desired version of Appium,
       # you first need to set up a Node.js environment that is compatible with your version of Appium.
-      - devicefarm-cli use node 18
+      # For iOS, use "nvm use" to switch between the two preinstalled NodeJS versions 14 and 16, and 
+      # use "nvm install" to download a new version of your choice.
+      - export NVM_DIR=$HOME/.nvm
+      - . $NVM_DIR/nvm.sh
+      - nvm install 18
+      - nvm use 18
       - node --version
 
-      # Use the devicefarm-cli to select a preinstalled major version of Appium.
-      - devicefarm-cli use appium 2
+      # For iOS, Appium versions 1.22.2, 2.2.1, and 2.11.5 are preinstalled and selectable through avm.
+      # For all other versions, please use npm to install them. For example:
+      # - npm install -g appium@2.1.3;
+      # Note that, for iOS devices, Appium 2 is only supported on iOS version 14.5 and above using
+      # NodeJS version 16 and above.
+      - avm 2.11.5
       - appium --version
 
-      # For Appium version 2, Device Farm automatically updates the preinstalled UIAutomator2 driver
-      # over time to incorporate the latest minor and patch versions for its major version 2. If you
-      # want to install a specific version of the driver, you can use the Appium extension CLI to
-      # uninstall the existing UIAutomator2 driver and install your desired version:
-      # - appium driver uninstall uiautomator2
-      # - appium driver install uiautomator2@2.34.0
+      # For Appium version 2, for iOS tests, the XCUITest driver is preinstalled using driver version 5.7.0
+      # for Appium 2.2.1 and driver version 7.27.0 for Appium 2.11.5. If you want to install a different
+      # version of the driver, you can use the Appium extension CLI to uninstall the existing XCUITest driver
+      # and install your desired version:
+      # - |-
+      #   if [ $DEVICEFARM_DEVICE_PLATFORM_NAME = "iOS" ];
+      #   then
+      #     appium driver uninstall xcuitest;
+      #     appium driver install xcuitest@5.8.1;
+      #   fi;
 
       - export DEVICE_NAME=$DEVICEFARM_DEVICE_NAME
       - export APPIUM_IP_ADDRESS="127.0.0.1"
@@ -37,21 +59,46 @@ phases:
       - export TEST_SCREENSHOT_PATH=$DEVICEFARM_SCREENSHOT_PATH
       - export TEST_LOG_DIR=$DEVICEFARM_LOG_DIR
 
-      # Use the devicefarm-cli to setup a Java environment, with which we can run the test suite.
-      - devicefarm-cli use java 11
+      # Verify the version of Java on the test host is compatible with your test package as follows.
       - java -version
+
+  # The pre-test phase contains commands for setting up your test environment.
   pre_test:
     commands:
-      - echo "Setting up test environment"
-
-      # Setup the CLASSPATH so that Java knows where to find your test classes
+      # Setup the CLASSPATH so that Java knows where to find your test classes.
       - export CLASSPATH=$CLASSPATH:$DEVICEFARM_TEST_PACKAGE_PATH/*
       - export CLASSPATH=$CLASSPATH:$DEVICEFARM_TEST_PACKAGE_PATH/dependency-jars/*
 
-      # Appium downloads Chromedriver using a feature that is considered insecure for multitenant
-      # environments. This is not a problem for Device Farm because each test host is allocated
-      # exclusively for one customer, then terminated entirely. For more information, please see
-      # https://github.com/appium/appium/blob/master/packages/appium/docs/en/guides/security.md
+      # Device Farm provides different pre-built versions of WebDriverAgent, an essential Appium
+      # dependency for iOS devices, and each version is suggested for different versions of Appium:
+      # DEVICEFARM_WDA_DERIVED_DATA_PATH_V9: this version is suggested for Appium 2 (with XCUITest driver version 7)
+      # DEVICEFARM_WDA_DERIVED_DATA_PATH_V8: this version is suggested for Appium 2 (with XCUITest driver versions 5 and 6)
+      # DEVICEFARM_WDA_DERIVED_DATA_PATH_V7: this version is suggested for Appium 1
+      # Additionally, for iOS versions 16 and below, the device unique identifier (UDID) needs
+      # to be slightly modified for Appium tests.
+      - |-
+        if [ $DEVICEFARM_DEVICE_PLATFORM_NAME = "iOS" ];
+         then
+           APPIUM_VERSION=$(appium --version);
+           if [ $(echo $APPIUM_VERSION | cut -d "." -f1) -ge 2 ];
+           then
+             if [ $(echo $APPIUM_VERSION | cut -d "." -f2) -ge 11 ];
+             then
+               DEVICEFARM_WDA_DERIVED_DATA_PATH=$DEVICEFARM_WDA_DERIVED_DATA_PATH_V9;
+             else
+               DEVICEFARM_WDA_DERIVED_DATA_PATH=$DEVICEFARM_WDA_DERIVED_DATA_PATH_V8;
+             fi;
+           else
+             DEVICEFARM_WDA_DERIVED_DATA_PATH=$DEVICEFARM_WDA_DERIVED_DATA_PATH_V7;
+           fi;
+
+          if [ $(echo $DEVICEFARM_DEVICE_OS_VERSION | cut -d "." -f 1) -le 16 ];
+          then
+            DEVICEFARM_DEVICE_UDID_FOR_APPIUM=$(echo $DEVICEFARM_DEVICE_UDID | tr -d "-");
+          else
+            DEVICEFARM_DEVICE_UDID_FOR_APPIUM=$DEVICEFARM_DEVICE_UDID;
+          fi;
+        fi;
 
       # We recommend starting the Appium server process in the background using the command below.
       # The Appium server log will be written to the $DEVICEFARM_LOG_DIR directory.
@@ -65,10 +112,11 @@ phases:
           "{\"appium:deviceName\": \"$DEVICEFARM_DEVICE_NAME\", \
           \"platformName\": \"$DEVICEFARM_DEVICE_PLATFORM_NAME\", \
           \"appium:app\": \"$DEVICEFARM_APP_PATH\", \
-          \"appium:udid\":\"$DEVICEFARM_DEVICE_UDID\", \
+          \"appium:udid\":\"$DEVICEFARM_DEVICE_UDID_FOR_APPIUM\", \
           \"appium:platformVersion\": \"$DEVICEFARM_DEVICE_OS_VERSION\", \
-          \"appium:chromedriverExecutableDir\": \"$DEVICEFARM_CHROMEDRIVER_EXECUTABLE_DIR\", \
-          \"appium:automationName\": \"UiAutomator2\"}" \
+          \"appium:derivedDataPath\": \"$DEVICEFARM_WDA_DERIVED_DATA_PATH\", \
+          \"appium:usePrebuiltWDA\": true, \
+          \"appium:automationName\": \"XCUITest\"}" \
           >> $DEVICEFARM_LOG_DIR/appium.log 2>&1 &
 
       # This code will wait until the Appium server starts.
@@ -111,7 +159,7 @@ phases:
       - cp -pr com target/test-classes/
       - cp -pr utils target/test-classes/
       - echo "Starting tests on device"
-      - mvn test -Dtest=AndroidTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
+      - mvn test -Dtest=IOSTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
 
       # To run your tests with a testng.xml file, use the following commands instead:
       # - echo "Unzipping the tests JAR file"
@@ -119,10 +167,6 @@ phases:
       # - |-
       #   java -Dappium.screenshots.dir=$DEVICEFARM_SCREENSHOT_PATH org.testng.TestNG -testjar *-tests.jar \
       #     testng.xml -d $DEVICEFARM_LOG_DIR/test-output -verbose 10
-
-      # Before starting tests, verify that all dependencies and configurations are in place.
-      # For more information, refer to AWS Device Farm's documentation on Appium Java TestNG testing:
-      # https://docs.aws.amazon.com/devicefarm/latest/developerguide/test-types-appium.html
 
 
   # The post-test phase contains commands that are run after your tests have completed.

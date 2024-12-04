@@ -26,10 +26,15 @@ jobs:
                   role-to-assume: ${{ secrets.AWS_DEVICE_FARM_ROLE_ARN }}
                   role-session-name: GitHubActionsSession
                   role-skip-session-tagging: true
-            - name: Download Android APK
+            - name: Download Android Image
               uses: actions/download-artifact@v4
               with:
                   name: android-apk
+                  path: ./tests/
+            - name: Download IOS Image
+              uses: actions/download-artifact@v4
+              with:
+                  name: ios-ipa
                   path: ./tests/
             - name: Download Packaged tests
               uses: actions/download-artifact@v4
@@ -51,6 +56,24 @@ jobs:
                         "type": "APPIUM_JAVA_TESTNG",
                         "testPackageArn": "tests/tests-with-dependencies.zip",
                         "testSpecArn": "tests/android-test-spec.yml"
+                      },
+                      "configuration": {
+                        "networkProfileArn": "Standard_WiFi_Profile"
+                      }
+                    }
+            - name: Test IOS App on AWS Device Farm
+              uses: aws-actions/aws-devicefarm-mobile-device-testing@v2.3
+              with:
+                  run-settings-json: |
+                    {
+                      "name": "GitHubAction-${{ github.workflow }}_${{ github.run_id }}_${{ github.run_attempt }}",
+                      "projectArn": "${{ secrets.AWS_DEVICE_FARM_PROJECT_ARN }}",
+                      "appArn": "tests/GreetingHexJavascriptReact.ipa",
+                      "devicePoolArn": "Top Devices",
+                      "test": {
+                        "type": "APPIUM_JAVA_TESTNG",
+                        "testPackageArn": "tests/tests-with-dependencies.zip",
+                        "testSpecArn": "tests/ios-test-spec.yml"
                       },
                       "configuration": {
                         "networkProfileArn": "Standard_WiFi_Profile"
