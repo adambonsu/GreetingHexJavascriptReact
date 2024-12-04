@@ -6,14 +6,7 @@ phases:
   install:
     commands:
       - echo "Installing dependencies"
-      - mvn clean install -DskipTests=true
       # Add any necessary installation commands
-      - echo "Copying test classes to testClassesDirectory"
-      - mkdir -p $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes
-      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/com $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
-      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/utils $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
-      - echo "Target classes:"
-      - find $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes -type f -exec ls -l {} \;
 
       # The Appium server is written using Node.js. In order to run your desired version of Appium,
       # you first need to set up a Node.js environment that is compatible with your version of Appium.
@@ -134,6 +127,10 @@ phases:
   # we recommend adding them to this section.
   post_test:
     commands:
+      - echo "MVN Logs:"
+      - cat $DEVICEFARM_LOG_DIR/mvn_test.log
+      - echo "Appium Logs:"
+      - cat $DEVICEFARM_LOG_DIR/appium.log
       - echo "Cleaning up after tests"
       # Add any cleanup commands
 
