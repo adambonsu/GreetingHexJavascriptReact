@@ -108,7 +108,8 @@ phases:
       # For more information, please see TestNG's documentation here:
       # http://testng.org/doc/documentation-main.html#running-testng
       - cd $DEVICEFARM_TEST_PACKAGE_PATH
-      - mkdir -p target/test-classes
+      - mkdir target
+      - mkdir target/test-classes
       - cp -pr com target/test-classes/
       - cp -pr utils target/test-classes/
       - mvn test -Dtest=AndroidTest -Dmaven.surefire.debug -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
