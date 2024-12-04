@@ -7,10 +7,6 @@ phases:
     commands:
       - echo "Installing dependencies"
       # Add any necessary installation commands\
-      - echo "Copying test classes to testClassesDirectory"
-      - mkdir -p $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes
-      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/com $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
-      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/utils $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
 
       # The Appium server is written using Node.js. In order to run your desired version of Appium,
       # you first need to set up a Node.js environment that is compatible with your version of Appium.
@@ -37,6 +33,10 @@ phases:
   pre_test:
     commands:
       - echo "Setting up test environment"
+
+      - echo "Setting up test classes"
+      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/com $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
+      - cp -R $DEVICEFARM_TEST_PACKAGE_PATH/utils $DEVICEFARM_TEST_PACKAGE_PATH/target/test-classes/
 
       # Setup the CLASSPATH so that Java knows where to find your test classes
       - export CLASSPATH=$CLASSPATH:$DEVICEFARM_TEST_PACKAGE_PATH/*
