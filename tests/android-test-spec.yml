@@ -112,7 +112,7 @@ phases:
       - cp -pr com target/test-classes/
       - cp -pr utils target/test-classes/
       - find . -type f -exec ls -l {} \;
-      - mvn test -Dtest=AndroidTest -Dmaven.surefire.debug -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
+      - mvn test -Dtest=AndroidTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
 
       # To run your tests with a testng.xml file, use the following commands instead:
       # - echo "Unzipping the tests JAR file"
