@@ -144,7 +144,6 @@ phases:
 
       # Your test package is downloaded and unpackaged into the $DEVICEFARM_TEST_PACKAGE_PATH directory.
       # - echo "Navigate to test package directory:" $DEVICEFARM_TEST_PACKAGE_PATH
-      - mvn --version
       - pwd
       - echo "Current directory contents:"
       - find .  -type f -exec ls -l {} \;
@@ -155,11 +154,15 @@ phases:
       # For more information, please see TestNG's documentation here:
       # http://testng.org/doc/documentation-main.html#running-testng
       - cd $DEVICEFARM_TEST_PACKAGE_PATH
-      - mkdir -p target/test-classes
-      - cp -pr com target/test-classes/
-      - cp -pr utils target/test-classes/
+      # - mkdir -p target/test-classes
+      # - cp -pr com target/test-classes/
+      # - cp -pr utils target/test-classes/
       - echo "Starting tests on device"
-      - mvn test -Dtest=IOSTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
+      - |-
+        java -cp "/data/local/tmp/test-classes:/data/local/tmp/dependency-jars/*" \
+          org.testng.TestNG \
+          -testclass com.adambonsu.apps.greetinghexjavascriptreact.tests.IOSTest \
+          -d $DEVICEFARM_LOG_DIR/test-output
 
       # To run your tests with a testng.xml file, use the following commands instead:
       # - echo "Unzipping the tests JAR file"
