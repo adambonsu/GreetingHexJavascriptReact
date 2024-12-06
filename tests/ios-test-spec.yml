@@ -165,8 +165,6 @@ phases:
           -testclass com.adambonsu.apps.greetinghexjavascriptreact.tests.IOSTest \
           -d $DEVICEFARM_LOG_DIR/test-output
 
-      - mvn test -Dtest=AndroidTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
-
       # To run your tests with a testng.xml file, use the following commands instead:
       # - echo "Unzipping the tests JAR file"
       # - unzip *-tests.jar
