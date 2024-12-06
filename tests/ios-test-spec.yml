@@ -58,6 +58,7 @@ phases:
       - export DEVICE_UDID=$DEVICEFARM_DEVICE_UDID
       - export TEST_SCREENSHOT_PATH=$DEVICEFARM_SCREENSHOT_PATH
       - export TEST_LOG_DIR=$DEVICEFARM_LOG_DIR
+      - export LOG_LEVEL=DEBUG
 
       # Verify the version of Java on the test host is compatible with your test package as follows.
       - java -version
@@ -138,7 +139,10 @@ phases:
       - echo "APP_PATH:" $APP_PATH
       - echo "PLATFORM_NAME:" $PLATFORM_NAME
       - echo "DEVICE_OS_VERSION:" $DEVICE_OS_VERSION
-      - echo "DEVICE_UDID:"  $DEVICEFARM_DEVICE_UDID
+      - echo "DEVICE_UDID:"  $DEVICE_UDID
+      - echo "DEVICEFARM_DEVICE_UDID:" $DEVICEFARM_DEVICE_UDID
+      - echo "DEVICEFARM_DEVICE_UDID_FOR_APPIUM:" $DEVICEFARM_DEVICE_UDID_FOR_APPIUM"
+      - echo "DEVICEFARM_DEVICE_OS_VERSION:" $DEVICEFARM_DEVICE_OS_VERSION
       - echo "DEVICE_NAME:" $DEVICE_NAME
       - echo "APPIUM_SERVER_MANAGEMENT:" $APPIUM_SERVER_MANAGEMENT
 
@@ -149,6 +153,7 @@ phases:
       - find .  -type f -exec ls -l {} \;
       - echo "Test package contents:"
       - find $DEVICEFARM_TEST_PACKAGE_PATH -type f -exec ls -l {} \;
+      - env | sort
 
       # The following command runs your Appium Java TestNG test.
       # For more information, please see TestNG's documentation here:
@@ -159,10 +164,12 @@ phases:
       # - cp -pr utils target/test-classes/
       - echo "Starting tests on device"
       - |-
-        java -cp "/data/local/tmp/test-classes:/data/local/tmp/dependency-jars/*" \
+        java -cp "$DEVICEFARM_TEST_PACKAGE_PATH/test-classes:$DEVICEFARM_TEST_PACKAGE_PATH/dependency-jars/*:$DEVICEFARM_TEST_PACKAGE_PATH/com/*:$DEVICEFARM_TEST_PACKAGE_PATH/tests-*.jar" \
           org.testng.TestNG \
           -testclass com.adambonsu.apps.greetinghexjavascriptreact.tests.IOSTest \
           -d $DEVICEFARM_LOG_DIR/test-output
+
+      - mvn test -Dtest=AndroidTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
 
       # To run your tests with a testng.xml file, use the following commands instead:
       # - echo "Unzipping the tests JAR file"

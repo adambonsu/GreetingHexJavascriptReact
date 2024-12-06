@@ -7,11 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.adambonsu.apps.greetinghexjavascriptreact.config.AppiumConfig;
-
 public class TestHelper {
     private static final String GREETING_XPATH = "//*[@text='Hello Worldo!']";
-    private static final Logger logger = LoggerFactory.getLogger(AppiumConfig.class);
+    private static final Logger logger = LoggerFactory.getLogger(TestHelper.class);
 
     public static boolean isGreetingDisplayed(AppiumDriver driver) {
         try {
@@ -20,7 +18,7 @@ public class TestHelper {
             logger.debug("isGreetingDisplayed(): {}}", greetingElement.isDisplayed());
             return greetingElement.isDisplayed();
         } catch (Exception e) {
-            logger.error("Exception in isGreetingDisplayed: {}", e);
+            logger.error("Exception in isGreetingDisplayed: " + e);
             return false;
         }
     }
