@@ -140,11 +140,7 @@ phases:
       - echo "PLATFORM_NAME:" $PLATFORM_NAME
       - echo "DEVICE_OS_VERSION:" $DEVICE_OS_VERSION
       - echo "DEVICE_UDID:"  $DEVICE_UDID
-      - echo "DEVICEFARM_DEVICE_UDID:" $DEVICEFARM_DEVICE_UDID
-      - echo "DEVICEFARM_DEVICE_UDID_FOR_APPIUM:" $DEVICEFARM_DEVICE_UDID_FOR_APPIUM"
-      - echo "DEVICEFARM_DEVICE_OS_VERSION:" $DEVICEFARM_DEVICE_OS_VERSION
-      - echo "DEVICE_NAME:" $DEVICE_NAME
-      - echo "APPIUM_SERVER_MANAGEMENT:" $APPIUM_SERVER_MANAGEMENT
+
 
       # Your test package is downloaded and unpackaged into the $DEVICEFARM_TEST_PACKAGE_PATH directory.
       # - echo "Navigate to test package directory:" $DEVICEFARM_TEST_PACKAGE_PATH

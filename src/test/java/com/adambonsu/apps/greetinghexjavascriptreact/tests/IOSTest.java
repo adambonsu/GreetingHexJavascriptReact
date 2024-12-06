@@ -19,7 +19,7 @@ public class IOSTest extends BaseTest {
         XCUITestOptions options = new XCUITestOptions()
             .setDeviceName(System.getenv("DEVICE_NAME"))
             .setPlatformVersion(findHighestCompatibleSDKVersion(System.getenv("DEVICE_OS_VERSION")))
-            .setUdid(System.getenv("DEVICE_UDID"))
+            .setUdid(prepareUDIDForAppium(System.getenv("DEVICE_UDID")))
             .setAutomationName("xcuitest")
             .setApp(System.getenv("APP_PATH"))
             .setPlatformName("iOS");
@@ -37,6 +37,17 @@ public class IOSTest extends BaseTest {
         configureDriverTimeouts();
         logger.info("Set up completed");
     }
+
+    private String prepareUDIDForAppium(String udid) {
+        logger.info("Preparing UDID for Appium... targetSDKVersion: {}", udid);
+        String result = udid;
+        if (udid != null) {
+            result = udid.replaceAll("-", "");
+        }
+        logger.debug("Prepared UDID: {}", result);
+        return result;
+    }
+
     private String findHighestCompatibleSDKVersion(String targetSDKVersion) {
         logger.info("Finding highest compatible SDK Version... targetSDKVersion: {}", targetSDKVersion);
         String[] availableSDKs = AvailableSDKs.getAvailableSDKs();
