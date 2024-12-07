@@ -20,7 +20,7 @@ APP_PATH=/PATH/TO/GreetingHexJavascriptReact/android/app/build/outputs/apk/relea
 DEVICE_NAME="Pixel 9 API 35" \
 LOG_LEVEL=INFO \
 APPIUM_SERVER_MANAGEMENT=true \
-TEST_SCREENSHOT_PATH="./" \
+TEST_SCREENSHOT_PATH="." \
 mvn test -Dtest=AndroidTest
 ```
 * `APPIUM_IP_ADDRESS`
@@ -78,7 +78,7 @@ APP_PATH=./ios/GreetingHexJavascriptReact.ipa \
 DEVICE_NAME="iPhone 16 Pro Max" \
 LOG_LEVEL=INFO \
 APPIUM_SERVER_MANAGEMENT=true \
-TEST_SCREENSHOT_PATH="./" \
+TEST_SCREENSHOT_PATH="." \
 mvn test -Dtest=IOSTest
 
 ```
