@@ -4,7 +4,9 @@ import { View, Text, StyleSheet } from 'react-native';
 const Greeting = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Hello Worldo!</Text>
+      <Text style={styles.text} accessibilityLabel="greeting">
+      Hello Worldo!
+      </Text>
     </View>
   );
 };
