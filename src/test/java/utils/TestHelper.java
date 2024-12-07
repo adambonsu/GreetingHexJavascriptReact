@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 
 public class TestHelper {
-    private static final String GREETING_XPATH = "//*[@text='Hello Worldo!']";
+    private static final String GREETING_XPATH = "//*[@text='Hello Worldo!' or @label='Hello Worldo!' or @name='Hello Worldo!']";
     private static final Logger logger = LoggerFactory.getLogger(TestHelper.class);
 
     public static boolean isGreetingDisplayed(AppiumDriver driver) {
