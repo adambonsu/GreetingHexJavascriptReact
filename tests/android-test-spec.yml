@@ -107,12 +107,7 @@ phases:
       # For more information, please see TestNG's documentation here:
       # http://testng.org/doc/documentation-main.html#running-testng
       - cd $DEVICEFARM_TEST_PACKAGE_PATH
-      # - mkdir -p target/test-classes
-      # - cp -pr com target/test-classes/
-      # - cp -pr utils target/test-classes/
       - echo "Starting tests on device"
-      # - mvn test -Dtest=AndroidTest -X >> $DEVICEFARM_LOG_DIR/mvn_test.log 2>&1
-
       - |-
         java -cp "$DEVICEFARM_TEST_PACKAGE_PATH/test-classes:$DEVICEFARM_TEST_PACKAGE_PATH/dependency-jars/*:$DEVICEFARM_TEST_PACKAGE_PATH/com/*:$DEVICEFARM_TEST_PACKAGE_PATH/tests-*.jar" \
           org.testng.TestNG \

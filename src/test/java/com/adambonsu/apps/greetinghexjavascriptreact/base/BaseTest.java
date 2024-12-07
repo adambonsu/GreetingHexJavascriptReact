@@ -3,7 +3,10 @@ package com.adambonsu.apps.greetinghexjavascriptreact.base;
 import com.adambonsu.apps.greetinghexjavascriptreact.config.AppiumConfig;
 import utils.TestHelper;
 import io.appium.java_client.AppiumDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -14,7 +17,7 @@ import java.time.Duration;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-
+@Listeners(utils.TestListener.class)
 public abstract class BaseTest {
     protected AppiumDriver driver;
     protected AppiumConfig appiumConfig;
@@ -76,5 +79,9 @@ public abstract class BaseTest {
             }
         }  
         logger.info("Base torn down.");
+    }
+
+    public AppiumDriver getDriver() {
+        return driver;
     }
 }
