@@ -63,6 +63,11 @@ public abstract class BaseTest {
         assertTrue(TestHelper.isGreetingDisplayed(driver), "Greeting is not displayed");
     }
 
+    @Test
+    public void testGreetingEquals() {
+        assertTrue(TestHelper.greetingEquals(driver, "Hello Worldo!"), "Greeting is not Hello Worldo!");
+    }
+
     @AfterTest
     public void tearDown() {
         logger.info("Tearing down base...");

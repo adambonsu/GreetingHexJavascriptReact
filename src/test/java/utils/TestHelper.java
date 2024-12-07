@@ -18,18 +18,30 @@ public class TestHelper {
     private static final Logger logger = LoggerFactory.getLogger(TestHelper.class);
 
     public static boolean isGreetingDisplayed(AppiumDriver driver) {
+        logger.info("isGreetingDisplayed() Starting...");
+        boolean result = getGreetingElement(driver).isDisplayed();
+        logger.debug("result: " + result);
+        return result;
+    }
+
+    public static boolean greetingEquals(AppiumDriver driver, String expectedGreeting) {
+        logger.info("greetingEquals() Starting...");
+        boolean result = getGreetingElement(driver).getText().equals(expectedGreeting);
+        logger.debug("result: " + result);
+        return result;
+    }
+
+    public static WebElement getGreetingElement(AppiumDriver driver) {
         try {
-            logger.info("isGreetingDisplayed() Starting...");
+            logger.info("getGreetingElement() Starting...");
             logger.debug("driver: " + driver);
-            WebElement greetingElement = driver.findElement(AppiumBy.accessibilityId("Hello Worldo!"));
+            WebElement greetingElement = driver.findElement(AppiumBy.accessibilityId("greeting"));
             logger.debug("greetingElement: " + greetingElement);
-            boolean isDisplayed = greetingElement.isDisplayed();
-            logger.debug("isDisplayed: " + isDisplayed);
-            return isDisplayed;
+            return greetingElement;
         } catch (Exception e) {
-            logger.error("Exception in isGreetingDisplayed: " + e);
+            logger.error("Exception: " + e);
             logger.error("Page Source: " + driver.getPageSource());
-            return false;
+            return null;
         }
     }
 }
