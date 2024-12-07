@@ -20,7 +20,7 @@ public class Screenshot {
         String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         logger.debug("timestamp: " + timestamp);
         new File(directoryPath).mkdirs();
-        String filePath = directoryPath + fileName + "_" + timestamp + ".png";
+        String filePath = directoryPath + "/" + fileName + "_" + timestamp + ".png";
         logger.debug("filePath: " + filePath);
 
         try {
