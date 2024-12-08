@@ -25,9 +25,11 @@ public class TestHelper {
     }
 
     public static boolean greetingEquals(AppiumDriver driver, String expectedGreeting) {
-        logger.info("greetingEquals() Starting...");
-        boolean result = getGreetingElement(driver).getText().equals(expectedGreeting);
-        logger.debug("result: " + result);
+        logger.info("greetingEquals() Starting... expectedGreeting: " + expectedGreeting);
+        String actualGreeting = getGreetingElement(driver).getText();
+        logger.debug("actualGreeting: " + actualGreeting );
+        boolean result = actualGreeting.equals(expectedGreeting);
+        logger.debug("result: " + result );
         return result;
     }
 
