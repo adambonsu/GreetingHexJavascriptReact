@@ -3,11 +3,6 @@ package utils;
 import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 
-import java.io.File;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebElement;
 
 import org.slf4j.Logger;
@@ -25,9 +20,9 @@ public class TestHelper {
     }
 
     public static boolean greetingEquals(AppiumDriver driver, String expectedGreeting) {
-        logger.info("greetingEquals() Starting... expectedGreeting: " + expectedGreeting);
+        logger.info("greetingEquals() Starting... expectedGreeting: [{}]", expectedGreeting);
         String actualGreeting = getGreetingElement(driver).getText();
-        logger.debug("actualGreeting: " + actualGreeting );
+        logger.debug("expectedGreeting: [{}], actualGreeting: [{}]", expectedGreeting, actualGreeting );
         boolean result = actualGreeting.equals(expectedGreeting);
         logger.debug("result: " + result );
         return result;
