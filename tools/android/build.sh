@@ -1,5 +1,26 @@
 #!/bin/bash
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Check if NVM is available
+if type nvm > /dev/null 2>&1; then
+    echo "NVM is installed. Setting up Node.js 20"
+    nvm install 20
+    nvm use 20
+else
+    echo "NVM is not installed or not properly sourced. Please install NVM first."
+    exit 1
+fi
+
+# Verify Node.js version
+node_version=$(node -v)
+if [[ $node_version != v20* ]]; then
+    echo "Failed to set Node.js 20. Current version: $node_version"
+    exit 1
+fi
+echo "Node.js 20 is set up successfully. Current version: $node_version"
+
 # Install dependencies
 npm ci
 

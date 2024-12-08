@@ -23,6 +23,10 @@ public class AndroidTest extends BaseTest {
             .setAutomationName("uiautomator2")
             .setApp(System.getenv("APP_PATH"))
             .setPlatformName("Android");
+        options.setCapability("appWaitActivity", "com.adambonsu.apps.greetinghexjavascriptreact.MainActivity");
+        options.setCapability("appWaitPackage", "com.adambonsu.apps.greetinghexjavascriptreact");
+        options.setCapability("appWaitDuration", 60000);
+            
         
         logger.debug("Configuring driver..." + options);
 
