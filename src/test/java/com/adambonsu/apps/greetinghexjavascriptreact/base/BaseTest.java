@@ -3,15 +3,18 @@ package com.adambonsu.apps.greetinghexjavascriptreact.base;
 import com.adambonsu.apps.greetinghexjavascriptreact.config.AppiumConfig;
 import utils.TestHelper;
 import io.appium.java_client.AppiumDriver;
+import io.appium.java_client.AppiumBy;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
-
+import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,6 +57,11 @@ public abstract class BaseTest {
             driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
             // driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
         }
+    }
+
+    protected void waitForAppToLoad() throws InterruptedException {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(AppiumBy.accessibilityId("loading")));
     }
 
     @Test

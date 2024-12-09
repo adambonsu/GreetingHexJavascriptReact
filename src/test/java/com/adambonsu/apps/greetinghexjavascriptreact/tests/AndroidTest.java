@@ -39,6 +39,8 @@ public class AndroidTest extends BaseTest {
         
         logger.debug("Configuring driver timeouts...");
         configureDriverTimeouts();
+        logger.debug("Waiting for app to load...");
+        waitForAppToLoad();
         logger.info("Set up completed");
 
     }

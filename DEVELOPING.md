@@ -1,5 +1,13 @@
 # Developing
 
+## Unit Testing
+To run all tests, use the following command in your terminal: `npm test`
+To run tests with a watch mode (tests will re-run automatically when files change): `npm test -- --watch`
+To run a specific test file, use: `npm test -- path/to/your/test/file.test.js`. E.g `npm test -- src/components/loading/__tests__/LoadingIndicator.test.js`
+To see test coverage, use: `npm test -- --coverage`
+
+### Troubleshooting
+If you encounter any issues related to React Native's jest setup, try clearing the jest cache: `npm test -- --clearCache`
 ## Android
 
 ### Setting up local environment
@@ -9,7 +17,7 @@
   2.1. Start a device (Add a new device if necessary): Tools => Device Manager
 3. Run app against tests
 
-### Testing locally
+### User Flow Testing locally
 Execute following command via a terminal in the root directory of the project
 ```
 APPIUM_IP_ADDRESS="127.0.0.1" \
@@ -69,6 +77,8 @@ This command will build a release APK here: `android/app/build/outputs/apk/relea
 2. Open Android Studio
   2.1. Start a device (Add a new device if necessary): Tools => Device Manager
 3. Run app against tests
+
+### User Flow Testing locally
 ```
 APPIUM_IP_ADDRESS="127.0.0.1" \
 APPIUM_PORT="4723" \
