@@ -48,6 +48,11 @@ public class IOSTest extends BaseTest {
         logger.debug("Waiting for app to load...");
         waitForAppToLoad();
         logger.info("Set up completed");
+
+        // wait for 2 minutes 
+        logger.info("Waiting for an additional 2 minutes...");
+        Thread.sleep(120000);
+        logger.info("Completed...");
     }
 
     private String prepareUDIDForAppium(String udid) {
