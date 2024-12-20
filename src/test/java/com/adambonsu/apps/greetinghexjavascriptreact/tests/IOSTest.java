@@ -9,6 +9,7 @@ import utils.IOS.AvailableSDKs;
 
 import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.ios.options.XCUITestOptions;
+import java.time.Duration;
 
 public class IOSTest extends BaseTest {
 
@@ -22,7 +23,16 @@ public class IOSTest extends BaseTest {
             .setUdid(prepareUDIDForAppium(System.getenv("DEVICE_UDID")))
             .setAutomationName("xcuitest")
             .setApp(System.getenv("APP_PATH"))
-            .setPlatformName("iOS");
+            .setPlatformName("iOS")
+            .setNewCommandTimeout(Duration.ofSeconds(300))          // 5 minutes
+            .setWdaLaunchTimeout(Duration.ofSeconds(120))           // 2 minutes
+            .setWdaConnectionTimeout(Duration.ofSeconds(120))       // 2 minutes
+            .setWdaStartupRetries(4)
+            .setWdaStartupRetryInterval(Duration.ofSeconds(20));
+
+        options.amend("appium:launchTimeout", 180000);      // 3 minutes
+        options.amend("appium:commandTimeouts", "120000");  // 2 minutes
+        options.amend("appium:iosInstallPause", "8");       // 8 seconds
 
         logger.debug("Configuring driver..." + options);
 
