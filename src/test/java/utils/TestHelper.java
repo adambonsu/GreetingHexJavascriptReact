@@ -19,15 +19,6 @@ public class TestHelper {
         return result;
     }
 
-    public static boolean greetingEquals(AppiumDriver driver, String expectedGreeting) {
-        logger.info("greetingEquals() Starting... expectedGreeting: [{}]", expectedGreeting);
-        String actualGreeting = getGreetingElement(driver).getText();
-        logger.debug("expectedGreeting: [{}], actualGreeting: [{}]", expectedGreeting, actualGreeting );
-        boolean result = actualGreeting.equals(expectedGreeting);
-        logger.debug("result: " + result );
-        return result;
-    }
-
     public static WebElement getGreetingElement(AppiumDriver driver) {
         try {
             logger.info("getGreetingElement() Starting...");

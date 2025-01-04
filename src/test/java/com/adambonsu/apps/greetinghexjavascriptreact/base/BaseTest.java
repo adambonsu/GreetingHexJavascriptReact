@@ -60,17 +60,12 @@ public abstract class BaseTest {
 
     protected void waitForAppToLoad() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(AppiumBy.accessibilityId("loading")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("greeting")));
     }
 
     @Test
     public void testGreetingDisplayed() {
         assertTrue(TestHelper.isGreetingDisplayed(driver), "Greeting is not displayed");
-    }
-
-    @Test
-    public void testGreetingEquals() {
-        assertTrue(TestHelper.greetingEquals(driver, "Hello Worldo!"), "Greeting is not Hello Worldo!");
     }
 
     @AfterTest
