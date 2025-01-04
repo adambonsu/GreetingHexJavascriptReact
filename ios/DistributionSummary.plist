@@ -14,9 +14,9 @@
 			<key>certificate</key>
 			<dict>
 				<key>SHA1</key>
-				<string>69AAC5DD29776A89D0A98EE230E2068E4B0B31DC</string>
+				<string>A32007A26733F06A1CED9A9782CDB9AFA5B67C2D</string>
 				<key>dateExpires</key>
-				<string>20/11/2025</string>
+				<string>30/11/2025</string>
 				<key>type</key>
 				<string>Apple Distribution</string>
 			</dict>
@@ -32,9 +32,9 @@
 					<key>certificate</key>
 					<dict>
 						<key>SHA1</key>
-						<string>69AAC5DD29776A89D0A98EE230E2068E4B0B31DC</string>
+						<string>A32007A26733F06A1CED9A9782CDB9AFA5B67C2D</string>
 						<key>dateExpires</key>
-						<string>20/11/2025</string>
+						<string>30/11/2025</string>
 						<key>type</key>
 						<string>Apple Distribution</string>
 					</dict>
@@ -69,9 +69,9 @@
 			<key>profile</key>
 			<dict>
 				<key>UUID</key>
-				<string>66cdae06-6129-4cb2-970b-46afad359c02</string>
+				<string>d5ba19cc-67e1-49de-bca2-6bd38810ca4c</string>
 				<key>dateExpires</key>
-				<string>20/11/2025</string>
+				<string>30/11/2025</string>
 				<key>name</key>
 				<string>GreetingHexJavascriptReactDistributionProfile</string>
 			</dict>

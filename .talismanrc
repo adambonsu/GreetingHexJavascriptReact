@@ -9,22 +9,16 @@ fileignoreconfig:
     checksum: af887e5bc3502fea63f1cfbb859bd40108fde7e326706d45d5f7264bbce5db90
   - filename: ios/GreetingHexJavascriptReactTests/Info.plist
     checksum: 28a344aedbc53980d88717801f35d6849487463c250e0fa2c320c5fb260eb741
-  - filename: ios/GreetingHexJavascriptReact/Info.plist
-    checksum: a061be3ea9bb4334bc484ea94130b5112998f3fa6a481e4c0c8f3eac3bc3bd56
   - filename: ios/GreetingHexJavascriptReact/PrivacyInfo.xcprivacy
     checksum: f7605410fd4923eca99598ad35d5f9840465f15fff90186549f795565710b2de
   - filename: ios/GreetingHexJavascriptReact/LaunchScreen.storyboard
     checksum: 7657ae5ec88059913b5f1afca7efc60a72ca0d261ce0ec625bd5c0d9e6e67c41
-  - filename: ios/Podfile.lock
-    checksum: 03d006f20b95d64ee3dc05c00bb87bcf3649da0635ff4f7deec13be896594ae0
   - filename: package-lock.json
     checksum: e1f173c9c3247bec0fde481e0d72b462040339d63585b51cdb676883298c2d51
   - filename: ios/GreetingHexJavascriptReact.xcodeproj/project.pbxproj
     checksum: bf8706613e637cb2dd974ce46b53b288f4f6e93a1090f0d4db56fc944d80cce1
   - filename: CONTRIBUTION.md
     checksum: c8b47d700c1734fce438fb83561334c8046e27c764992f257691bdc54b902871
-  - filename: ios/DistributionSummary.plist
-    checksum: c2f199f41562813cf3ba52aa2bd6b2a6f676d27783d261e0c85199378b2285b0
   - filename: ios/exportOptions.plist
     checksum: b649e4626197d05924f4eeb43900cd1817413a30240b1eb50eedeb905d1ff803
   - filename: .github/workflows/build-image.yml
@@ -35,4 +29,10 @@ fileignoreconfig:
     checksum: 3d6a240257c9570d5fbab6afcfbf505da2693f19b15e2156e70fab95bdd5706c
   - filename: .github/workflows/ci.yml
     checksum: 0b5c30baba17d211984909650909a838e3ab5a80ac5843dc534047e3311076c3
+  - filename: ios/DistributionSummary.plist
+    checksum: 6a807a26c9af0d4b005704e117ebae93b1e737fa37ed739f48699a17c137efb3
+  - filename: ios/Podfile.lock
+    checksum: 34ab60cd12571d5f5e6bc6be5fb51207586ee815785746d5f667ce4288524ae9
+  - filename: ios/GreetingHexJavascriptReact/Info.plist
+    checksum: 55b04a0cea1bb960862ad9ec7818e9e2f6e58640ce796d773f4171634a6a459f
 version: ''

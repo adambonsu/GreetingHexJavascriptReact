@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.beust.ah.A;
+
 
 public class TestHelper {
     private static final Logger logger = LoggerFactory.getLogger(TestHelper.class);
@@ -28,6 +30,12 @@ public class TestHelper {
         return result;
     }
 
+    public static String getGreetingElementText(AppiumDriver driver) {
+        logger.info("getGreetingElementText() Starting...");
+        String result = getGreetingElement(driver).getText();
+        logger.debug("result: " + result);
+        return result;
+    }
     public static WebElement getGreetingElement(AppiumDriver driver) {
         try {
             logger.info("getGreetingElement() Starting...");
