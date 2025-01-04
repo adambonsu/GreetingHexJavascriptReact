@@ -60,7 +60,7 @@ public abstract class BaseTest {
 
     protected void waitForAppToLoad() throws InterruptedException {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-        wait.until(ExpectedConditions.invisibilityOfElementLocated(AppiumBy.accessibilityId("loading")));
+        wait.until(ExpectedConditions.presenceOfElementLocated(AppiumBy.accessibilityId("greeting")));
     }
 
     @Test
