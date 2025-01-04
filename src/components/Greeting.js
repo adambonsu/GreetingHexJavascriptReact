@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 
 const Greeting = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text} accessibilityLabel="greeting">
-      Hello Worldo!
+      <Text style={styles.text} accessibilityLabel="greeting" testID="greeting">
+        Hello Worldo!
       </Text>
     </View>
   );
@@ -25,5 +25,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export { styles };
+export {styles};
 export default Greeting;
