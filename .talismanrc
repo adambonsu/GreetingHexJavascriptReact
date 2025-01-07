@@ -25,8 +25,6 @@ fileignoreconfig:
     checksum: c2f199f41562813cf3ba52aa2bd6b2a6f676d27783d261e0c85199378b2285b0
   - filename: ios/exportOptions.plist
     checksum: b649e4626197d05924f4eeb43900cd1817413a30240b1eb50eedeb905d1ff803
-  - filename: .github/workflows/build-image.yml
-    checksum: 404f9d7d870c0c24a09825efad694df9be670873bdf81d59cbaf715d3f1b2ea1
   - filename: .github/workflows/ci-cd.yml
     checksum: 3d6a240257c9570d5fbab6afcfbf505da2693f19b15e2156e70fab95bdd5706c
   - filename: .github/workflows/ci.yml
@@ -35,4 +33,6 @@ fileignoreconfig:
     checksum: 5c5b2a87848b38018522d05db2364377af7fbdc93bc1e97b8cdebb5dc787da90
   - filename: .github/workflows/cd.yml
     checksum: 7f177b179692cb92f274cd82132c22dde73d2ebfbb10d203f0319eced8872531
+  - filename: .github/workflows/build-image.yml
+    checksum: 216b978d8c3a771b6b44dda2cf2110152fdea0010d438ae85a8f3c8eb1a8ff90
 version: ''
