@@ -11,5 +11,6 @@ jobs:
   build-image:
     permissions:
       contents: read
+      packages: read
     secrets: inherit
     uses: ./.github/workflows/build-image.yml
