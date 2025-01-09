@@ -86,4 +86,6 @@ target
 # Logging
 logs
 
+.env
+
 .ACTIVITY.md

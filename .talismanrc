@@ -21,18 +21,18 @@ fileignoreconfig:
     checksum: bf8706613e637cb2dd974ce46b53b288f4f6e93a1090f0d4db56fc944d80cce1
   - filename: CONTRIBUTION.md
     checksum: c8b47d700c1734fce438fb83561334c8046e27c764992f257691bdc54b902871
-  - filename: ios/DistributionSummary.plist
-    checksum: c2f199f41562813cf3ba52aa2bd6b2a6f676d27783d261e0c85199378b2285b0
   - filename: ios/exportOptions.plist
     checksum: b649e4626197d05924f4eeb43900cd1817413a30240b1eb50eedeb905d1ff803
   - filename: .github/workflows/ci-cd.yml
     checksum: 3d6a240257c9570d5fbab6afcfbf505da2693f19b15e2156e70fab95bdd5706c
   - filename: .github/workflows/ci.yml
     checksum: 0b5c30baba17d211984909650909a838e3ab5a80ac5843dc534047e3311076c3
-  - filename: package-lock.json
-    checksum: 5c5b2a87848b38018522d05db2364377af7fbdc93bc1e97b8cdebb5dc787da90
   - filename: .github/workflows/cd.yml
     checksum: 7f177b179692cb92f274cd82132c22dde73d2ebfbb10d203f0319eced8872531
+  - filename: ios/DistributionSummary.plist
+    checksum: 6a807a26c9af0d4b005704e117ebae93b1e737fa37ed739f48699a17c137efb3
+  - filename: package-lock.json
+    checksum: b57fb920e83f59bbd34b154ed0c1f5b646ef15a7734cdb298f2fd5062a8cf52d
   - filename: .github/workflows/build-image.yml
-    checksum: 216b978d8c3a771b6b44dda2cf2110152fdea0010d438ae85a8f3c8eb1a8ff90
+    checksum: d03205cd5114e3641f2ac83dc7fe5f953a6e1ce3e612d3028c1875ed910161cb
 version: ''

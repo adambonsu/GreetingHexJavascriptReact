@@ -15,6 +15,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Set up environment
+        run: |
+          echo "HONEYCOMB_API_KEY=${{ secrets.HONEYCOMB_API_KEY }}" >> $GITHUB_ENV
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -62,6 +65,8 @@ jobs:
         run: |
           cd android
           ./gradlew assembleRelease
+        env:
+          HONEYCOMB_API_KEY: ${{ secrets.HONEYCOMB_API_KEY }}
       - name: Upload Android APK
         uses: actions/upload-artifact@v4
         with:
@@ -72,6 +77,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+      - name: Set up environment
+        run: |
+          echo "HONEYCOMB_API_KEY=${{ secrets.HONEYCOMB_API_KEY }}" >> $GITHUB_ENV
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -125,6 +133,8 @@ jobs:
           cd ios
           xcodebuild -workspace GreetingHexJavascriptReact.xcworkspace -scheme GreetingHexJavascriptReact -configuration Release -archivePath GreetingHexJavascriptReact.xarchive archive -allowProvisioningUpdates
           xcodebuild -exportArchive -archivePath GreetingHexJavascriptReact.xarchive.xcarchive -exportOptionsPlist exportOptions.plist -exportPath . -allowProvisioningUpdates
+        env:
+          HONEYCOMB_API_KEY: ${{ secrets.HONEYCOMB_API_KEY }}
       - name: Upload iOS IPA
         uses: actions/upload-artifact@v4
         with:
