@@ -1,5 +1,5 @@
 import {OTLPTraceExporter} from '@opentelemetry/exporter-trace-otlp-http';
-import {WebTracerProvider} from '@opentelemetry/sdk-trace-web';
+import {BasicTracerProvider} from '@opentelemetry/sdk-trace-base';
 import {Resource} from '@opentelemetry/resources';
 import {SemanticResourceAttributes} from '@opentelemetry/semantic-conventions'; // This is deprecated. Is there an alternative?
 import {SimpleSpanProcessor} from '@opentelemetry/sdk-trace-base';
@@ -14,7 +14,7 @@ const setupTelemetry = () => {
     },
   });
 
-  const provider = new WebTracerProvider({
+  const provider = new BasicTracerProvider({
     resource: new Resource({
       [SemanticResourceAttributes.SERVICE_NAME]:
         'greeting-hex-javascript-react',
