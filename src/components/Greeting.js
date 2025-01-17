@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {greet} from '@adambonsu/greeting-hex-javascript';
 
 const Greeting = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.text} accessibilityLabel="greeting" testID="greeting">
-        Hello Worldo!
+        {greet()}
       </Text>
     </View>
   );
