@@ -17,8 +17,6 @@ fileignoreconfig:
     checksum: 7657ae5ec88059913b5f1afca7efc60a72ca0d261ce0ec625bd5c0d9e6e67c41
   - filename: ios/Podfile.lock
     checksum: 03d006f20b95d64ee3dc05c00bb87bcf3649da0635ff4f7deec13be896594ae0
-  - filename: package-lock.json
-    checksum: e1f173c9c3247bec0fde481e0d72b462040339d63585b51cdb676883298c2d51
   - filename: ios/GreetingHexJavascriptReact.xcodeproj/project.pbxproj
     checksum: bf8706613e637cb2dd974ce46b53b288f4f6e93a1090f0d4db56fc944d80cce1
   - filename: CONTRIBUTION.md
@@ -35,4 +33,6 @@ fileignoreconfig:
     checksum: 0b5c30baba17d211984909650909a838e3ab5a80ac5843dc534047e3311076c3
   - filename: .github/workflows/cd.yml
     checksum: 7f177b179692cb92f274cd82132c22dde73d2ebfbb10d203f0319eced8872531
+  - filename: package-lock.json
+    checksum: 5c5b2a87848b38018522d05db2364377af7fbdc93bc1e97b8cdebb5dc787da90
 version: ''
