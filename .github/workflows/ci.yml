@@ -1,12 +1,11 @@
 name: CI
 run-name: 'CI run by @${{ github.actor }}, event: ${{ github.event_name }}'
 on:
-  pull_request:
   push:
   workflow_call:
   workflow_dispatch:
 concurrency:
-  group: ci ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: ci ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   build-image:
