@@ -29,8 +29,6 @@ fileignoreconfig:
     checksum: 3d6a240257c9570d5fbab6afcfbf505da2693f19b15e2156e70fab95bdd5706c
   - filename: .github/workflows/cd.yml
     checksum: 7f177b179692cb92f274cd82132c22dde73d2ebfbb10d203f0319eced8872531
-  - filename: package-lock.json
-    checksum: 5c5b2a87848b38018522d05db2364377af7fbdc93bc1e97b8cdebb5dc787da90
   - filename: .github/workflows/test/device/application.yml
     checksum: 58dcb4786ce109a20d4a40f2270784aa4850ade59446ef14d5258ca560128778
   - filename: .github/workflows/device-tests.yml
@@ -39,4 +37,6 @@ fileignoreconfig:
     checksum: 3c8ec686f29e70ed14d1d9ff315db57a1f4c2be381b37c112762e7ad35c0a6e8
   - filename: .github/workflows/build-image.yml
     checksum: d7fdeb71042fca785643b958927b6a0db3f74690a5bc6f082800b8ed1ef0fd58
+  - filename: package-lock.json
+    checksum: 231d0ece33dd08a4e379e53d1157d55985700e7e893c8267bef59f93078bc157
 version: ''
