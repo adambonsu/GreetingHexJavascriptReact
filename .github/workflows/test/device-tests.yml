@@ -1,0 +1,14 @@
+name: Device Tests
+run-name: 'Device Tests run by @${{ github.actor }}, event: ${{ github.event_name }}'
+on:
+  push:
+  workflow_call:
+  workflow_dispatch:
+concurrency:
+  group: ci ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  application:
+    uses: ./.github/workflows/test/device/application.yml
+  network:
+    uses: ./.github/workflows/test/device/network.yml

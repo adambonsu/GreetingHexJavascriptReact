@@ -35,4 +35,6 @@ fileignoreconfig:
     checksum: 5c5b2a87848b38018522d05db2364377af7fbdc93bc1e97b8cdebb5dc787da90
   - filename: .github/workflows/build-image.yml
     checksum: 8f4547a6e5e2825cc938a0844378c79900fadc431cf72a684bd2dc0beb05e74c
+  - filename: .github/workflows/test/device/application.yml
+    checksum: 58dcb4786ce109a20d4a40f2270784aa4850ade59446ef14d5258ca560128778
 version: ''

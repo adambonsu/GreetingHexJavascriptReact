@@ -13,3 +13,8 @@ jobs:
       contents: read
     secrets: inherit
     uses: ./.github/workflows/build-image.yml
+  non-device-tests:
+    uses: ./.github/workflows/test/non-device-tests.yml
+  device-tests:
+    uses: ./.github/workflows/test/device-tests.yml
+    needs: build-image

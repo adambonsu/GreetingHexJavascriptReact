@@ -1,0 +1,18 @@
+name: Performance Tests
+run-name: 'Performance Tests run by @${{ github.actor }}, event: ${{ github.event_name }}'
+on:
+  workflow_call:
+  workflow_dispatch:
+concurrency:
+  group: performance-test ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+jobs:
+  build-image-android:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20

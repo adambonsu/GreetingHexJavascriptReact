@@ -1,0 +1,26 @@
+name: Non-Device Tests
+run-name: 'Non-Device Tests run by @${{ github.actor }}, event: ${{ github.event_name }}'
+on:
+  push:
+  workflow_call:
+  workflow_dispatch:
+concurrency:
+  group: ci ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  functional:
+    uses: ./.github/workflows/test/functional.yml
+  security:
+    uses: ./.github/workflows/test/security.yml
+  performance:
+    uses: ./.github/workflows/test/performance.yml
+  accessibility:
+    uses: ./.github/workflows/test/accessibility.yml
+  data:
+    uses: ./.github/workflows/test/data.yml
+  production:
+    uses: ./.github/workflows/test/production.yml
+  cross-functional-requirements:
+    uses: ./.github/workflows/test/cross-functional-requirements.yml
+  visual:
+    uses: ./.github/workflows/test/visual.yml
