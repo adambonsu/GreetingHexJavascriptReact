@@ -22,14 +22,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run Reassure performance tests
-        run: reassure
+        run: npx reassure
       - name: Upload performance test results
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: performance-results
           path: reassure-output.json
-      - name: Analyze performance results
+      - name: Analyse performance results
         if: always()
         run: |
           reassure check --threshold 10

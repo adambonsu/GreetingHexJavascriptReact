@@ -35,12 +35,12 @@ fileignoreconfig:
     checksum: 5cad1011855c53105dd0aaa066d214aa08d008bc9b2a8080a8617399c9c87478
   - filename: .github/workflows/build-image.yml
     checksum: d7fdeb71042fca785643b958927b6a0db3f74690a5bc6f082800b8ed1ef0fd58
-  - filename: package-lock.json
-    checksum: 231d0ece33dd08a4e379e53d1157d55985700e7e893c8267bef59f93078bc157
   - filename: .github/workflows/performance.yml
     checksum: c36b53ffe8729afb87c438157447e69497bc8e923005adb3f83f87b232c18a0d
   - filename: .github/workflows/non-device-tests.yml
     checksum: a1eb9d533d1e5ff43b105755cafa19a7ed799e3c72866637867c972e719cebfa
   - filename: .github/workflows/ci.yml
     checksum: 5e79676881862ce201f7df46c1395bbb9141d03dae1c885e8962269da3fdcc6e
+  - filename: package-lock.json
+    checksum: 4038f47fdc1b5011612abaac61144451c885f3fc7b3c69d25a031c25d8ca2fca
 version: ''
