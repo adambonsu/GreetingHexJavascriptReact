@@ -5,7 +5,7 @@ on:
   workflow_call:
   workflow_dispatch:
 concurrency:
-  group: ci ${{ github.workflow }}-${{ github.ref }}
+  group: non-device-test ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   functional:

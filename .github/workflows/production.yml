@@ -1,10 +1,10 @@
-name: Functional Tests
-run-name: 'Functional Tests run by @${{ github.actor }}, event: ${{ github.event_name }}'
+name: Production Tests
+run-name: 'Production Tests run by @${{ github.actor }}, event: ${{ github.event_name }}'
 on:
   workflow_call:
   workflow_dispatch:
 concurrency:
-  group: functional-test ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  group: production-test ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 jobs:
   build-image-android:
