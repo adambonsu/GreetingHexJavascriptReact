@@ -9,6 +9,6 @@ concurrency:
   cancel-in-progress: true
 jobs:
   application:
-    uses: ./.github/workflows/test/device/application.yml
+    uses: ./.github/workflows/application.yml
   network:
-    uses: ./.github/workflows/test/device/network.yml
+    uses: ./.github/workflows/network.yml
