@@ -9,7 +9,10 @@ concurrency:
 jobs:
   job-not-implemented-yet:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - name: Step not implemented yet
+        continue-on-error: true
         run: |
-          echo "Not implemented yet"
+          echo "This job is not yet implemented"
+          exit 1
