@@ -41,4 +41,6 @@ fileignoreconfig:
     checksum: 231d0ece33dd08a4e379e53d1157d55985700e7e893c8267bef59f93078bc157
   - filename: .github/workflows/performance.yml
     checksum: c36b53ffe8729afb87c438157447e69497bc8e923005adb3f83f87b232c18a0d
+  - filename: .github/workflows/non-device-tests.yml
+    checksum: a1eb9d533d1e5ff43b105755cafa19a7ed799e3c72866637867c972e719cebfa
 version: ''
