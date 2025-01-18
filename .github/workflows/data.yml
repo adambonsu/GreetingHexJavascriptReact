@@ -12,6 +12,7 @@ jobs:
     continue-on-error: true
     steps:
       - name: Step not implemented yet
+        continue-on-error: true
         run: |
           echo "This job is not yet implemented"
           exit 1
