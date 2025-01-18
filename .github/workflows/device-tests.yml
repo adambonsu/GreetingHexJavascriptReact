@@ -9,6 +9,12 @@ concurrency:
   cancel-in-progress: true
 jobs:
   application:
+    permissions:
+      contents: read
+    secrets: inherit
     uses: ./.github/workflows/application.yml
   network:
+    permissions:
+      contents: read
+    secrets: inherit
     uses: ./.github/workflows/network.yml

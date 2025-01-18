@@ -27,8 +27,6 @@ fileignoreconfig:
     checksum: b649e4626197d05924f4eeb43900cd1817413a30240b1eb50eedeb905d1ff803
   - filename: .github/workflows/ci-cd.yml
     checksum: 3d6a240257c9570d5fbab6afcfbf505da2693f19b15e2156e70fab95bdd5706c
-  - filename: .github/workflows/ci.yml
-    checksum: 0b5c30baba17d211984909650909a838e3ab5a80ac5843dc534047e3311076c3
   - filename: .github/workflows/cd.yml
     checksum: 7f177b179692cb92f274cd82132c22dde73d2ebfbb10d203f0319eced8872531
   - filename: package-lock.json
@@ -37,4 +35,8 @@ fileignoreconfig:
     checksum: 8f4547a6e5e2825cc938a0844378c79900fadc431cf72a684bd2dc0beb05e74c
   - filename: .github/workflows/test/device/application.yml
     checksum: 58dcb4786ce109a20d4a40f2270784aa4850ade59446ef14d5258ca560128778
+  - filename: .github/workflows/device-tests.yml
+    checksum: 5cad1011855c53105dd0aaa066d214aa08d008bc9b2a8080a8617399c9c87478
+  - filename: .github/workflows/ci.yml
+    checksum: 3c8ec686f29e70ed14d1d9ff315db57a1f4c2be381b37c112762e7ad35c0a6e8
 version: ''

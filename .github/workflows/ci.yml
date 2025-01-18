@@ -16,5 +16,8 @@ jobs:
   non-device-tests:
     uses: ./.github/workflows/non-device-tests.yml
   device-tests:
+    permissions:
+      contents: read
+    secrets: inherit
     uses: ./.github/workflows/device-tests.yml
     needs: build-image
