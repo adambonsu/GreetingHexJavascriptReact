@@ -39,4 +39,6 @@ fileignoreconfig:
     checksum: d7fdeb71042fca785643b958927b6a0db3f74690a5bc6f082800b8ed1ef0fd58
   - filename: package-lock.json
     checksum: 231d0ece33dd08a4e379e53d1157d55985700e7e893c8267bef59f93078bc157
+  - filename: .github/workflows/performance.yml
+    checksum: c36b53ffe8729afb87c438157447e69497bc8e923005adb3f83f87b232c18a0d
 version: ''
