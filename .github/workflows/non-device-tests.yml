@@ -9,18 +9,18 @@ concurrency:
   cancel-in-progress: true
 jobs:
   functional:
-    uses: ./.github/workflows/test/functional.yml
+    uses: ./.github/workflows/functional.yml
   security:
-    uses: ./.github/workflows/test/security.yml
+    uses: ./.github/workflows/security.yml
   performance:
-    uses: ./.github/workflows/test/performance.yml
+    uses: ./.github/workflows/performance.yml
   accessibility:
-    uses: ./.github/workflows/test/accessibility.yml
+    uses: ./.github/workflows/accessibility.yml
   data:
-    uses: ./.github/workflows/test/data.yml
+    uses: ./.github/workflows/data.yml
   production:
-    uses: ./.github/workflows/test/production.yml
+    uses: ./.github/workflows/production.yml
   cross-functional-requirements:
-    uses: ./.github/workflows/test/cross-functional-requirements.yml
+    uses: ./.github/workflows/cross-functional-requirements.yml
   visual:
-    uses: ./.github/workflows/test/visual.yml
+    uses: ./.github/workflows/visual.yml
