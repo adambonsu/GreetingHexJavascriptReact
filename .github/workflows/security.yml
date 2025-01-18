@@ -7,12 +7,37 @@ concurrency:
   group: security-test ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
 jobs:
-  build-image-android:
+  sast:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 20
+      - name: Static Application Security Test (SAST) - Talisman - Detect secrets in commits
+        uses: carhartl/talisman-secrets-scan-action@v1.4.0
+  owasp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+      - name: Security Composition Analysis (SCA) - OWASP Dependency Check
+        uses: dependency-check/Dependency-Check_Action@main
+        with:
+          project: 'GreetingHexJavascriptReact'
+          path: '.'
+          format: 'HTML'
+          out: 'dependency-check'
+      - name: Upload OWASP Dependency Check Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: dependency-check
+          path: ${{github.workspace}}/dependency-check
